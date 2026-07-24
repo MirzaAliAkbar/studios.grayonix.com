@@ -52,7 +52,12 @@
     }
 
     function renderPayouts(container, data) {
-      const { payouts, summary } = data;
+      const payouts = data.payouts || [];
+      const pending = data.pendingThisMonth || [];
+      const totalPaid = payouts.filter(p => p.paid).reduce((s, p) => s + (p.payoutAmount || 0), 0);
+      const pendingTotal = payouts.filter(p => !p.paid).reduce((s, p) => s + (p.payoutAmount || 0), 0);
+      const pendingCount = payouts.filter(p => !p.paid).length;
+      const summary = { totalPaid, pendingTotal, pendingCount };
 
       container.innerHTML = `
         <h1 style="font-size:24px;font-weight:700;margin-bottom:24px;">Payouts</h1>
@@ -73,14 +78,14 @@
         </div>
 
         <div class="card">
-          <div class="card-header" style="display:flex;align-items:center;gap:12px;">
+          <div class="card-header" style="display:flex;align-items:center;gap:12px;">${' '}
             Reconciliation
             <button class="btn btn-sm btn-primary" onclick="toggleReconcileForm()">+ Start Reconciliation</button>
           </div>
           <div id="reconcileForm" style="display:none;" class="reconcile-form">
             <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:12px;">
               Paste AdMob actual revenue data in JSON format:<br>
-              <code style="font-size:11px;">{"month": "2026-07", "revenues": {"SARAH20": 150000000, "FITNESS01": 85000000}}</code>
+              <code style="font-size:11px;">{"month": "2026-07", "revenues": {"KANZA": 150000000}}</code>
             </p>
             <textarea id="reconcileData" placeholder='{"month": "2026-07", "revenues": {"CODE1": 100000000, "CODE2": 50000000}}'></textarea>
             <div style="margin-top:12px;">
@@ -93,20 +98,20 @@
 
         <div class="card">
           <div class="card-header">Payout History</div>
-          ${payouts && payouts.length
+          ${payouts.length
             ? `<div style="overflow-x:auto;"><table class="admin-table">
                 <tr><th>Month</th><th>Influencer</th><th>Signups</th><th>Revenue Reconciled</th><th>Share%</th><th>Payout</th><th>Status</th><th></th></tr>
                 ${payouts.map(p => `
-                  <tr class="${!p.paid && p.payout_micros > 0 ? 'payout-due' : ''}">
+                  <tr class="${!p.paid && p.payoutAmount > 0 ? 'payout-due' : ''}">
                     <td>${p.month}</td>
-                    <td><strong>${p.displayName || p.influencer_id}</strong></td>
-                    <td>${fmtNumber(p.total_signups)}</td>
-                    <td>${fmtCurrency(p.ad_revenue_micros / 1000000)}</td>
-                    <td>${p.share_percent}%</td>
-                    <td style="font-weight:700;">${fmtCurrency(p.payout_micros / 1000000)}</td>
+                    <td><strong>${p.displayName || p.influencerId}</strong></td>
+                    <td>${fmtNumber(p.totalSignups || 0)}</td>
+                    <td>${fmtCurrency(p.revenueReconciled || 0)}</td>
+                    <td>${p.sharePercent}%</td>
+                    <td style="font-weight:700;">${fmtCurrency(p.payoutAmount || 0)}</td>
                     <td><span class="badge ${p.paid ? 'badge-paid' : 'badge-pending'}">${p.paid ? 'Paid' : 'Pending'}</span></td>
                     <td class="actions-cell">
-                      ${!p.paid && p.payout_micros > 0
+                      ${!p.paid && p.payoutAmount > 0
                         ? `<button class="btn btn-sm btn-primary" onclick="markPaid(${p.id})">Mark Paid</button>`
                         : ''
                       }
@@ -116,7 +121,24 @@
               </table></div>`
             : '<div class="empty-state" style="padding:30px;"><div class="icon">📋</div>No payout records yet. Run reconciliation to generate payouts.</div>'
           }
-        </div>
+        </div>${' '}
+        ${pending.length ? `
+        <div class="card">
+          <div class="card-header">Pending This Month (est.)</div>
+          <div style="overflow-x:auto;"><table class="admin-table">
+            <tr><th>Influencer</th><th>Share%</th><th>Signups</th><th>Revenue (est.)</th><th>Earnings (est.)</th></tr>
+            ${pending.map(p => `
+              <tr>
+                <td><strong>${p.displayName}</strong></td>
+                <td>${p.sharePercent}%</td>
+                <td>${fmtNumber(p.signups || 0)}</td>
+                <td>${fmtCurrency(p.revenueEstimate || 0)}</td>
+                <td>${fmtCurrency(p.earningsEstimate || 0)}</td>
+              </tr>
+            `).join('')}
+          </table></div>
+        </div>` : ''
+        }
       `;
     }
 
@@ -142,8 +164,14 @@
         return;
       }
 
+      // Convert { "CODE": revenueMicros } → [{ influencerId, revenueMicros }]
+      const reconciliations = Object.entries(payload.revenues).map(([code, revenue]) => ({
+        influencerId: code,
+        revenueMicros: typeof revenue === 'number' ? revenue : 0,
+      }));
+
       try {
-        const result = await adminApi('/payouts/reconcile', { method: 'POST', body: payload });
+        const result = await adminApi('/payouts/reconcile', { method: 'POST', body: { month: payload.month, reconciliations } });
         resultDiv.style.display = 'block';
         resultDiv.innerHTML = `
           <div style="background:#d1fae5;padding:14px;border-radius:var(--radius-sm);">
@@ -163,7 +191,7 @@
     async function markPaid(id) {
       if (!confirm('Mark this payout as paid?')) return;
       try {
-        await adminApi('/payouts/mark-paid', { method: 'POST', body: { id } });
+        await adminApi('/payouts/mark-paid', { method: 'POST', body: { payoutId: id } });
         showToast('Marked as paid');
         location.reload();
       } catch (e) { showToast(e.message, 'error'); }

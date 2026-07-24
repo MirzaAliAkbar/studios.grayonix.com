@@ -36,8 +36,12 @@
       showLoading(container);
 
       try {
-        const data = await adminApi('/dashboard');
-        renderDashboard(container, data);
+        const [stats, influencers] = await Promise.all([
+          adminApi('/dashboard'),
+          adminApi('/influencers'),
+        ]);
+        stats.influencers = influencers.influencers;
+        renderDashboard(container, stats);
       } catch {
         clearToken();
         window.location.href = '/admin/login.html';
