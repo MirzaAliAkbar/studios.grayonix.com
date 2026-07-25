@@ -17,10 +17,10 @@ function createInfluencerRow(i) {
   return `<tr>
     <td><strong>${i.displayName}</strong></td>
     <td style="font-family:monospace;letter-spacing:1px;">${i.code}</td>
-    <td>${fmtNumber(i.totalSignups)}</td>
-    <td>${fmtCurrency(i.estimatedRevenue)}</td>
-    <td>${fmtCurrency(i.estimatedEarnings)}</td>
-    <td>${i.retentionD7}%</td>
+    <td>${fmtNumber(i.signups)}</td>
+    <td>${fmtCurrency(i.revenueEstimate)}</td>
+    <td>${fmtCurrency(i.earningsEstimate)}</td>
+    <td>${i.retentionD7 != null ? i.retentionD7 + '%' : '—'}</td>
     <td>
       <span class="badge ${i.active ? 'badge-active' : 'badge-inactive'}">
         ${i.active ? 'Active' : 'Inactive'}
@@ -54,23 +54,24 @@ async function toggleInfluencer(code, active) {
 
 // ── Render admin stat bar ──
 function renderAdminStats(container, data) {
+  const t = data.totals || {};
   container.innerHTML = `
     <div class="stats-row admin-stats">
       <div class="stat-card">
         <div class="stat-label">Total Influencers</div>
-        <div class="stat-value">${fmtNumber(data.totalInfluencers)}</div>
+        <div class="stat-value">${fmtNumber(t.influencers)}</div>
       </div>
       <div class="stat-card">
         <div class="stat-label">Total Signups</div>
-        <div class="stat-value">${fmtNumber(data.totalSignups)}</div>
+        <div class="stat-value">${fmtNumber(t.signups)}</div>
       </div>
       <div class="stat-card">
         <div class="stat-label">Revenue Generated (est.)</div>
-        <div class="stat-value">${fmtCurrency(data.totalRevenue)}</div>
+        <div class="stat-value">${fmtCurrency(t.revenueEstimate)}</div>
       </div>
       <div class="stat-card">
         <div class="stat-label">Pending Payouts</div>
-        <div class="stat-value">${fmtCurrency(data.pendingPayouts)}</div>
+        <div class="stat-value">${fmtCurrency(t.pendingPayouts)}</div>
       </div>
     </div>`;
 }

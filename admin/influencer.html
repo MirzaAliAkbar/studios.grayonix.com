@@ -58,8 +58,10 @@
     }
 
     function renderInfluencer(container, data) {
-      const { influencer, stats, fraudFlags, signups, retention } = data;
+      const { influencer, stats, fraudFlags, recentSignups, retention } = data;
       const hasFraud = fraudFlags && fraudFlags.length > 0;
+      const signups = recentSignups || [];
+      const signupsToGo = Math.max(0, 5000 - stats.totalSignups);
 
       container.innerHTML = `
         <div style="margin-bottom:20px;">
@@ -68,14 +70,14 @@
           <p style="color:var(--color-text-secondary);font-size:14px;">
             Code: <strong>${influencer.code}</strong> ·
             <span class="badge ${influencer.active ? 'badge-active' : 'badge-inactive'}">${influencer.active ? 'Active' : 'Inactive'}</span>
-            · Member since ${fmtDate(influencer.created_at)}
+            · Member since ${fmtDate(influencer.memberSince)}
           </p>
         </div>
 
         <div class="stats-row">
           <div class="stat-card"><div class="stat-label">Total Signups</div><div class="stat-value">${fmtNumber(stats.totalSignups)}</div></div>
-          <div class="stat-card"><div class="stat-label">Revenue (est.)</div><div class="stat-value">${fmtCurrency(stats.estimatedRevenue)}</div></div>
-          <div class="stat-card"><div class="stat-label">Earnings (est.)</div><div class="stat-value">${fmtCurrency(stats.estimatedEarnings)}</div></div>
+          <div class="stat-card"><div class="stat-label">Revenue (est.)</div><div class="stat-value">${fmtCurrency(stats.totalRevenue)}</div></div>
+          <div class="stat-card"><div class="stat-label">Earnings (est.)</div><div class="stat-value">${fmtCurrency(stats.earningsEstimate)}</div></div>
           <div class="stat-card"><div class="stat-label">Revenue/User</div><div class="stat-value">${fmtCurrency(stats.revenuePerUser)}</div></div>
         </div>
 
@@ -92,11 +94,11 @@
 
           <div class="card">
             <div class="card-header">Settings</div>
-            <div class="info-row"><span class="label">Revenue Share</span><span class="value">${influencer.share_percent}%</span></div>
-            <div class="info-row"><span class="label">Auto-flip eligible?</span><span class="value">${stats.totalSignups >= 5000 ? '✅ Yes (5K+ signups)' : '❌ No (${5000 - stats.totalSignups} to go)'}</span></div>
+            <div class="info-row"><span class="label">Revenue Share</span><span class="value">${influencer.sharePercent}%</span></div>
+            <div class="info-row"><span class="label">Auto-flip eligible?</span><span class="value">${stats.totalSignups >= 5000 ? '✅ Yes (5K+ signups)' : '❌ No (' + signupsToGo + ' to go)'}</span></div>
             <div class="override-form">
               <label style="font-size:12px;">Override share%:</label>
-              <input type="number" id="newShare" value="${influencer.share_percent}" min="0" max="100" style="width:70px;">
+              <input type="number" id="newShare" value="${influencer.sharePercent}" min="0" max="100" style="width:70px;">
               <button class="btn btn-sm btn-primary" onclick="updateShare()">Update</button>
             </div>
             <div style="margin-top:12px;border-top:1px solid var(--color-border);padding-top:12px;">
@@ -123,11 +125,11 @@
 
           <div class="card detail-full">
             <div class="card-header">Recent Signups</div>
-            ${signups && signups.length
+            ${signups.length
               ? `<div class="signup-list"><table>
-                  <tr><th>Date</th><th>Install ID</th><th>Country</th><th>Platform</th></tr>
+                  <tr><th>Date</th><th>Country</th><th>Platform</th></tr>
                   ${signups.map(s =>
-                    `<tr><td>${fmtDate(s.created_at)}</td><td style="font-size:11px;font-family:monospace;">${s.install_id}</td><td>${s.country || '—'}</td><td>${s.platform || '—'}</td></tr>`
+                    `<tr><td>${fmtDate(s.created_at)}</td><td>${s.country || '—'}</td><td>${s.platform || '—'}</td></tr>`
                   ).join('')}
                 </table></div>`
               : '<div class="empty-state" style="padding:20px;"><div class="icon">👤</div>No signups yet</div>'
@@ -141,7 +143,7 @@
       const pct = parseInt(document.getElementById('newShare').value);
       if (isNaN(pct) || pct < 0 || pct > 100) { showToast('Enter 0–100', 'error'); return; }
       try {
-        await adminApi(`/codes/${code}`, { method: 'PATCH', body: { share_percent: pct } });
+        await adminApi(`/codes/${code}`, { method: 'PATCH', body: { sharePercent: pct } });
         showToast(`Share updated to ${pct}%`);
         location.reload();
       } catch (e) { showToast(e.message, 'error'); }
@@ -150,8 +152,10 @@
     async function toggleStatus() {
       if (!confirm(`Toggle status for code "${code}"?`)) return;
       try {
-        await adminApi(`/codes/${code}`, { method: 'PATCH', body: { active: 0 } });
-        showToast('Status toggled');
+        const data = await adminApi(`/influencer/${code}`);
+        const newActive = data.influencer.active ? 0 : 1;
+        await adminApi(`/codes/${code}`, { method: 'PATCH', body: { active: newActive } });
+        showToast(`Code ${newActive ? 'activated' : 'deactivated'}`);
         location.reload();
       } catch (e) { showToast(e.message, 'error'); }
     }
