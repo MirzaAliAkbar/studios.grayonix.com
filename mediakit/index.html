@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GetTaller — Media Kit &amp; Influencer Partnership</title>
+<meta name="description" content="GetTaller media kit: app overview, features, science, target audience, and influencer affiliate program details.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#4C1D95;
+    --primary-2:#7C3AED;
+    --tertiary:#8B5CF6;
+    --accent:#10B981;
+    --bg:#F8FAFC;
+    --bg-soft:#F1F5F9;
+    --text:#0F172A;
+    --muted:#64748B;
+    --card:#FFFFFF;
+    --line:#E2E8F0;
+    --radius:16px;
+    --shadow:0 10px 30px -12px rgba(76,29,149,.18);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4,.display{font-family:'Plus Jakarta Sans',sans-serif;line-height:1.15}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  a{color:var(--primary-2);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:linear-gradient(135deg,var(--primary-2),var(--tertiary));
+    color:#fff;font-weight:600;padding:14px 28px;border-radius:999px;
+    font-size:16px;box-shadow:0 8px 20px -8px rgba(124,58,237,.5);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px -8px rgba(124,58,237,.6);text-decoration:none}
+  .btn.green{background:linear-gradient(135deg,#0EA371,var(--accent));box-shadow:0 8px 20px -8px rgba(16,185,129,.5)}
+  .btn.outline{background:#fff;color:var(--primary);border:1.5px solid var(--primary);box-shadow:none}
+  .btn.outline:hover{background:#FAF5FF}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:
+      radial-gradient(1000px 480px at 85% -10%, rgba(139,92,246,.25), transparent 60%),
+      radial-gradient(800px 420px at 0% 0%, rgba(76,29,149,.18), transparent 55%),
+      linear-gradient(160deg,#2E1065 0%, var(--primary) 45%, var(--primary-2) 100%);
+    color:#fff;padding:76px 0 64px;position:relative;overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(2px 2px at 20% 40%, rgba(255,255,255,.35), transparent 40%);
+    background-size:26px 26px;opacity:.5;pointer-events:none;
+  }
+  .hero .wrap{position:relative;z-index:1;text-align:center}
+  .hero-logo{
+    width:108px;height:108px;border-radius:26px;overflow:hidden;margin:0 auto 20px;
+    box-shadow:0 16px 40px -12px rgba(0,0,0,.5);border:3px solid rgba(255,255,255,.2);
+  }
+  .hero-logo img{width:100%;height:100%;object-fit:cover;display:block}
+  .hero .kicker{
+    display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;
+    letter-spacing:.12em;text-transform:uppercase;color:#DDD6FE;
+    background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);
+    padding:8px 16px;border-radius:999px;margin-bottom:20px;
+  }
+  .hero h1{font-size:clamp(38px,6vw,64px);font-weight:800;letter-spacing:-.02em}
+  .hero h1 .accent{color:#A78BFA}
+  .hero .tagline{font-size:clamp(17px,2.4vw,22px);color:#E9D5FF;max-width:640px;margin:16px auto 28px;font-weight:400}
+  .hero .ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .hero .pills{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+  .pill{
+    background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);
+    padding:8px 16px;border-radius:999px;font-size:13px;font-weight:600;color:#EDE9FE;
+  }
+  .pill b{color:#fff}
+
+  /* ---------- STATS STRIP ---------- */
+  .stats{background:var(--card);border-bottom:1px solid var(--line)}
+  .stats .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;padding:30px 0}
+  .stat{text-align:center;padding:8px 12px}
+  .stat .num{font-family:'Plus Jakarta Sans';font-size:34px;font-weight:800;color:var(--primary)}
+  .stat .lbl{font-size:13px;color:var(--muted);margin-top:2px;font-weight:500}
+  .stat + .stat{border-left:1px solid var(--line)}
+  @media(max-width:720px){.stats .grid{grid-template-columns:repeat(2,1fr);gap:18px 0}.stat+.stat{border-left:none}}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:72px 0}
+  .sec-head{text-align:center;max-width:680px;margin:0 auto 48px}
+  .sec-head .eyebrow{
+    display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--primary-2);background:#F5F3FF;border:1px solid #EDE9FE;padding:6px 14px;border-radius:999px;margin-bottom:14px;
+  }
+  .sec-head h2{font-size:clamp(28px,4vw,40px);font-weight:800;letter-spacing:-.01em}
+  .sec-head p{color:var(--muted);margin-top:12px;font-size:17px}
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+  .about-copy h3{font-size:26px;font-weight:700;margin-bottom:14px}
+  .about-copy p{color:#334155;margin-bottom:14px;font-size:16.5px}
+  .about-copy .points{list-style:none;margin-top:18px;display:grid;gap:10px}
+  .about-copy .points li{display:flex;gap:10px;align-items:flex-start;font-weight:500;font-size:15px}
+  .about-copy .points .check{
+    width:22px;height:22px;flex:none;border-radius:50%;background:#ECFDF5;color:#059669;
+    display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;margin-top:1px;
+  }
+  .mode-cards{display:grid;gap:12px}
+  .mode-card{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;
+    display:flex;gap:14px;align-items:center;box-shadow:0 4px 14px -8px rgba(15,23,42,.08);
+  }
+  .mode-card .age{
+    font-family:'Plus Jakarta Sans';font-weight:800;font-size:15px;color:var(--primary);
+    background:#F5F3FF;border:1px solid #EDE9FE;border-radius:10px;padding:8px 12px;white-space:nowrap;
+  }
+  .mode-card b{font-size:15.5px}
+  .mode-card span{font-size:13.5px;color:var(--muted);display:block;margin-top:2px}
+  @media(max-width:860px){.about-grid{grid-template-columns:1fr}.mode-card .age{white-space:normal}}
+
+  /* ---------- FEATURES ---------- */
+  #features{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:900px){.feat-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:600px){.feat-grid{grid-template-columns:1fr}}
+  .feat{
+    background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 24px;transition:transform .15s ease,box-shadow .15s ease;
+  }
+  .feat:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+  .feat .ico{
+    width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;
+    font-size:22px;margin-bottom:16px;
+  }
+  .feat h3{font-size:18px;font-weight:700;margin-bottom:6px}
+  .feat p{font-size:14.5px;color:var(--muted)}
+  .i-purple{background:#F5F3FF}.i-green{background:#ECFDF5}.i-blue{background:#EFF6FF}.i-amber{background:#FFFBEB}
+
+  /* ---------- SCREENSHOTS ---------- */
+  #screenshots{background:var(--bg)}
+  .shot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  @media(max-width:860px){.shot-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.shot-grid{grid-template-columns:1fr}}
+  .shot{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+    box-shadow:0 6px 20px -12px rgba(15,23,42,.15);text-align:center;
+  }
+  .shot img{width:100%;height:auto;display:block;aspect-ratio:2/3.05;object-fit:cover}
+  .shot figcaption{padding:12px;font-size:13.5px;font-weight:600;color:#334155}
+
+  /* ---------- SCIENCE ---------- */
+  #science{background:linear-gradient(180deg,var(--bg),#F5F3FF)}
+  .science-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  @media(max-width:720px){.science-grid{grid-template-columns:1fr}}
+  .sci{
+    background:var(--card);border:1px solid var(--line);border-left:4px solid var(--tertiary);
+    border-radius:12px;padding:20px 22px;
+  }
+  .sci b{font-family:'Plus Jakarta Sans';font-size:16px;color:var(--primary)}
+  .sci p{font-size:14px;color:var(--muted);margin-top:6px}
+  .disclaimer{
+    margin-top:26px;background:#FFFBEB;border:1px solid #FDE68A;border-radius:12px;
+    padding:14px 18px;font-size:13.5px;color:#92400E;text-align:center;
+  }
+
+  /* ---------- PARTNER ---------- */
+  #partner{background:var(--card)}
+  .partner-head{max-width:760px;margin:0 auto 20px;text-align:center}
+  .partner-head h2{font-size:clamp(28px,4vw,40px);font-weight:800}
+  .partner-head p{color:var(--muted);margin-top:12px;font-size:17px}
+
+  .rates{
+    display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:stretch;max-width:900px;margin:34px auto 0;
+  }
+  @media(max-width:700px){.rates{grid-template-columns:1fr}}
+  .rate-card{
+    background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:28px;text-align:center;
+    display:flex;flex-direction:column;justify-content:center;gap:6px;
+  }
+  .rate-card.hot{background:linear-gradient(160deg,var(--primary),var(--primary-2));border:none;color:#fff;box-shadow:var(--shadow)}
+  .rate-card.hot .pct{color:#fff}
+  .rate-card.hot .note{color:#DDD6FE}
+  .rate-card .pct{font-family:'Plus Jakarta Sans';font-size:44px;font-weight:800;color:var(--primary)}
+  .rate-card .lbl{font-weight:600;font-size:15px}
+  .rate-card .note{font-size:13.5px;color:var(--muted)}
+  .rates-arrow{align-self:center;font-size:26px;color:var(--accent);font-weight:800}
+  @media(max-width:700px){.rates-arrow{transform:rotate(90deg);justify-self:center}}
+  .rates-caption{text-align:center;font-size:13.5px;color:var(--muted);margin-top:14px}
+
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:48px}
+  @media(max-width:760px){.two-col{grid-template-columns:1fr}}
+  .panel{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+  .panel h3{font-size:19px;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+  .panel ul{list-style:none;display:grid;gap:12px}
+  .panel li{font-size:14.5px;display:flex;gap:10px;align-items:flex-start;color:#334155}
+  .panel li b{color:var(--text)}
+  .panel li .dot{width:8px;height:8px;border-radius:50%;background:var(--tertiary);margin-top:8px;flex:none}
+  .panel li .dot.g{background:var(--accent)}
+  .panel li .dot.r{background:#F43F5E}
+
+  table.terms{width:100%;border-collapse:collapse;margin-top:10px;font-size:14.5px}
+  table.terms td{border-bottom:1px solid var(--line);padding:11px 4px;vertical-align:top}
+  table.terms td:first-child{font-weight:600;color:var(--primary);width:42%}
+  table.terms tr:last-child td{border-bottom:none}
+
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:10px}
+  @media(max-width:760px){.steps{grid-template-columns:1fr 1fr}}
+  .step{text-align:center;padding:18px 10px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+  .step .n{
+    width:34px;height:34px;margin:0 auto 10px;border-radius:50%;background:linear-gradient(135deg,var(--primary-2),var(--tertiary));
+    color:#fff;font-family:'Plus Jakarta Sans';font-weight:800;display:flex;align-items:center;justify-content:center;font-size:15px;
+  }
+  .step b{font-size:13.5px;display:block;margin-bottom:4px}
+  .step span{font-size:12px;color:var(--muted)}
+
+  /* ---------- CTA / FOOTER ---------- */
+  .final-cta{
+    background:
+      radial-gradient(900px 400px at 15% 110%, rgba(16,185,129,.18), transparent 55%),
+      linear-gradient(160deg,#2E1065,var(--primary) 55%,var(--primary-2));
+    color:#fff;text-align:center;padding:80px 24px;
+  }
+  .final-cta h2{font-size:clamp(28px,4.4vw,44px);font-weight:800;max-width:640px;margin:0 auto 14px}
+  .final-cta p{color:#DDD6FE;max-width:520px;margin:0 auto 30px;font-size:17px}
+  .final-cta .contact{margin-top:26px;font-size:14px;color:#C4B5FD}
+  .final-cta .contact a{color:#fff;font-weight:600;border-bottom:1px solid rgba(255,255,255,.4)}
+  footer{background:#1E1B4B;color:#A5B4FC;text-align:center;padding:26px 20px;font-size:13px}
+  footer b{color:#C7D2FE}
+
+  .qr-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;font-size:13px}
+  .qr-grid b{color:var(--text)}
+  @media(max-width:600px){.qr-grid{grid-template-columns:1fr}}
+
+  @media print{
+    .btn,.ctas a{display:none}
+    body{background:#fff}
+    .hero{background:var(--primary)}
+    section{break-inside:avoid-page}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-logo"><img src="assets/icon.png" alt="GetTaller app icon"></div>
+    <div class="kicker">● Grayonix Studios &nbsp;·&nbsp; Media Kit &amp; Partner Program</div>
+    <h1>Unlock Your <span class="accent">Genetic Height</span> Potential</h1>
+    <p class="tagline">GetTaller is the free, science-backed app that helps teens and young adults optimize growth, posture, and nutrition during their peak growth window.</p>
+    <div class="ctas">
+      <a class="btn" href="#partner">Become a Partner →</a>
+      <a class="btn outline" href="#science">See the Science</a>
+    </div>
+    <div class="pills">
+      <span class="pill">💯 <b>100% Free</b></span>
+      <span class="pill">🔒 <b>No Login · Private</b></span>
+      <span class="pill">🧬 <b>Science-Backed</b></span>
+      <span class="pill">🤖 <b>AI Coach</b></span>
+      <span class="pill">📱 <b>Android</b></span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ STATS ============ -->
+<div class="stats"><div class="wrap"><div class="grid">
+  <div class="stat"><div class="num">90-Day</div><div class="lbl">Progressive Growth Protocol</div></div>
+  <div class="stat"><div class="num">100+</div><div class="lbl">Video Exercises · No Equipment</div></div>
+  <div class="stat"><div class="num">4</div><div class="lbl">Science-Based Prediction Models</div></div>
+  <div class="stat"><div class="num">4</div><div class="lbl">Age-Optimized Training Modes</div></div>
+</div></div></div>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">About the App</span>
+      <h2>Your Growth Window Is the Most Important Window</h2>
+      <p>Between ages 13–21, natural height gains are still possible. GetTaller helps users maximize that window — through exercise, sleep, nutrition, and posture — with a private, ad-supported app that never asks for an account.</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-copy">
+        <h3>What GetTaller does</h3>
+        <p>GetTaller combines established pediatric growth models (Khamis-Roche &amp; Tanner) with a personalized "Hybrid Momentum" prediction, then coaches users to close the gap through a 90-day progressive routine, HGH-optimizing sleep habits, DRI-based nutrition targets, and posture correction.</p>
+        <ul class="points">
+          <li><span class="check">✓</span> Personalized height prediction capped at realistic genetic potential (+6&nbsp;cm)</li>
+          <li><span class="check">✓</span> 90-day routine: Foundation → Progression → Intensification → Maintenance</li>
+          <li><span class="check">✓</span> 24/7 AI Growth Coach answering height &amp; fitness questions</li>
+          <li><span class="check">✓</span> Year-by-year growth chart with a "growth window" countdown</li>
+          <li><span class="check">✓</span> Nutrition goals built on US Dietary Reference Intakes (calcium, protein, calories)</li>
+          <li><span class="check">✓</span> Works offline — growth data stays 100% on the user's device</li>
+        </ul>
+      </div>
+      <div class="mode-cards">
+        <div class="mode-card"><span class="age">Under 12</span><div><b>Growth Tracker</b><span>Build the foundation for maximum adult height.</span></div></div>
+        <div class="mode-card"><span class="age">13–19</span><div><b>Peak Potential</b><span>The core growth window — full exercise + nutrition + sleep protocol.</span></div></div>
+        <div class="mode-card"><span class="age">20–24</span><div><b>Transitional</b><span>Late-window optimization before plates close.</span></div></div>
+        <div class="mode-card"><span class="age">25+</span><div><b>Posture Restoration</b><span>Recover 1.5–2.5 cm of visible height through posture &amp; decompression.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section id="features">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Key Features</span>
+      <h2>Everything a Growth Journey Needs</h2>
+      <p>Designed for one core goal: help users reach their genetic potential — not make impossible promises.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat"><div class="ico i-purple">🤖</div><h3>AI Growth Coach</h3><p>24/7 personalized answers on exercise, sleep schedules for HGH release, nutrition, and realistic height potential.</p></div>
+      <div class="feat"><div class="ico i-blue">📈</div><h3>Height Prediction</h3><p>Khamis-Roche genetics + age momentum. Shows peak potential, genetic range, and monthly growth projection.</p></div>
+      <div class="feat"><div class="ico i-green">🗓️</div><h3>90-Day Protocol</h3><p>A progressive 4-phase routine that adapts from foundation to maintenance — every user gets a structured path.</p></div>
+      <div class="feat"><div class="ico i-purple">💪</div><h3>100+ Exercises</h3><p>Spine mobility, hanging &amp; decompression, hip openers, core, posture, neck, yoga, and stretching — all with video links.</p></div>
+      <div class="feat"><div class="ico i-green">🥗</div><h3>Smart Nutrition</h3><p>Personalized calcium, protein, and calorie targets based on official Dietary Reference Intake standards.</p></div>
+      <div class="feat"><div class="ico i-amber">😴</div><h3>Sleep Optimization</h3><p>Guides 8–10 hours to maximize the deep-sleep window where ~75% of daily HGH is released.</p></div>
+      <div class="feat"><div class="ico i-blue">🧘</div><h3>Posture Correction</h3><p>Wall angels, chin tucks, and decompression to restore 1.5–2.5 cm of "hidden" height.</p></div>
+      <div class="feat"><div class="ico i-green">📏</div><h3>Growth Window Timer</h3><p>A countdown that shows exactly how much of the growth window remains, keeping users consistent.</p></div>
+      <div class="feat"><div class="ico i-amber">🔒</div><h3>Privacy First</h3><p>No login, no account, no cloud. Data stays on-device — the user is in full control.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCREENSHOTS ============ -->
+<section id="screenshots">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">In-App</span>
+      <h2>See GetTaller in Action</h2>
+      <p>Real screenshots from the app — free to use in your content.</p>
+    </div>
+    <div class="shot-grid">
+      <figure class="shot"><img src="assets/dashboard.jpg" alt="GetTaller dashboard"><figcaption>Growth Dashboard</figcaption></figure>
+      <figure class="shot"><img src="assets/daily-plan.jpg" alt="Daily plan"><figcaption>Daily Plan</figcaption></figure>
+      <figure class="shot"><img src="assets/ai-coach.jpg" alt="AI coach"><figcaption>AI Growth Coach</figcaption></figure>
+      <figure class="shot"><img src="assets/plan.jpg" alt="90 day plan"><figcaption>90-Day Protocol</figcaption></figure>
+      <figure class="shot"><img src="assets/exercise.jpg" alt="Exercises"><figcaption>Training Library</figcaption></figure>
+      <figure class="shot"><img src="assets/privacy.jpg" alt="Privacy"><figcaption>Private by Design</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCIENCE ============ -->
+<section id="science">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">The Science</span>
+      <h2>Built on Peer-Reviewed Research</h2>
+      <p>Everything in GetTaller maps to established medical models — no pills, no magic, no false promises.</p>
+    </div>
+    <div class="science-grid">
+      <div class="sci"><b>Khamis-Roche (1994)</b><p>Pediatric height-prediction method combining parental heights with the child's current height &amp; weight.</p></div>
+      <div class="sci"><b>Tanner Mid-Parental Method</b><p>The standard genetic baseline: (Father + Mother ± 13) ÷ 2 — used to set each user's realistic potential.</p></div>
+      <div class="sci"><b>HGH &amp; Deep Sleep — Van Cauter (2000)</b><p>~75% of daily growth hormone is released during slow-wave sleep, concentrated in the first hours of sleep.</p></div>
+      <div class="sci"><b>Growth Plate Biology</b><p>Longitudinal growth stops at ~18 (F) / ~21 (M). The app segments users around this biological reality.</p></div>
+      <div class="sci"><b>Spinal Decompression</b><p>Gravity-based training (hanging, swimming) temporarily increases disc height and improves spinal alignment.</p></div>
+      <div class="sci"><b>Dietary Reference Intakes</b><p>Calcium &amp; protein targets follow official IOM guidelines for peak bone-mineral accrual in adolescence.</p></div>
+    </div>
+    <p class="disclaimer"><b>Honest by design:</b> GetTaller is an educational &amp; lifestyle app. It helps users reach their genetic potential — it never guarantees height increase, and content is crafted to comply with FTC and app-store standards.</p>
+  </div>
+</section>
+
+<!-- ============ PARTNER ============ -->
+<section id="partner">
+  <div class="wrap">
+    <div class="partner-head">
+      <span class="eyebrow">Influencer Affiliate Program</span>
+      <h2>Partner With Us &amp; Earn on Every User You Refer</h2>
+      <p>GetTaller is free and ad-supported, so our partners earn a <b>revenue share of the ad revenue</b> generated by users they refer. Your earnings grow with your audience.</p>
+    </div>
+
+    <div class="rates">
+      <div class="rate-card">
+        <div class="pct">5%</div>
+        <div class="lbl">From Day One</div>
+        <div class="note">Revenue share of every referred user's ad revenue</div>
+      </div>
+      <div class="rates-arrow">→</div>
+      <div class="rate-card hot">
+        <div class="pct">20%</div>
+        <div class="lbl">At 5,000 Lifetime Installs</div>
+        <div class="note">Duration also extends from 3 to 12 months per user</div>
+      </div>
+    </div>
+    <p class="rates-caption">How it works: you start at <b>5% revenue share</b> from day one. Once your total referred installs reach <b>5,000 lifetime</b>, your rate jumps to <b>20%</b> — and the revenue-share window per user extends from 3 months to <b>12 months</b>.</p>
+
+    <div class="two-col">
+      <div class="panel">
+        <h3>💰 Payout Terms</h3>
+        <table class="terms">
+          <tr><td>Minimum payout</td><td><b>$50</b></td></tr>
+          <tr><td>Frequency</td><td><b>Monthly (net-30)</b></td></tr>
+          <tr><td>Methods</td><td><b>PayPal · Bank Transfer (Wise) · Stripe Connect</b></td></tr>
+          <tr><td>Attribution</td><td>30-day window, <b>first code wins</b>, tied to that user permanently</td></tr>
+          <tr><td>Tracking</td><td>Your unique referral code + <b>affiliate dashboard</b> (installs, revenue, retention)</td></tr>
+        </table>
+      </div>
+      <div class="panel">
+        <h3>✅ Creator Requirements</h3>
+        <ul>
+          <li><span class="dot"></span><span>Active social account with <b>10,000+ followers</b> (any platform)</span></li>
+          <li><span class="dot"></span><span>Content focused on <b>health, fitness, self-improvement, lifestyle, or education</b></span></li>
+          <li><span class="dot"></span><span>FTC-compliant disclosure of the partnership (<code>#ad</code>, <code>#affiliate</code>)</span></li>
+          <li><span class="dot"></span><span>Content must <b>not target children under 13</b> (COPPA)</span></li>
+          <li><span class="dot"></span><span>No medical claims or promises of specific height results</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="panel">
+        <h3>💬 Approved Messaging Themes</h3>
+        <ul>
+          <li><span class="dot g"></span><span>“Reach your <b>genetic potential</b> through science-backed habits”</span></li>
+          <li><span class="dot g"></span><span>“<b>Optimize your growth window</b> with proper nutrition, sleep, and exercise”</span></li>
+          <li><span class="dot g"></span><span>“<b>Posture correction</b> for visible height improvement”</span></li>
+          <li><span class="dot g"></span><span>“Track your <b>growth journey</b> with data-driven insights”</span></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>🚫 Off-Limits</h3>
+        <ul>
+          <li><span class="dot r"></span><span>Claims of <b>guaranteed height increase</b></span></li>
+          <li><span class="dot r"></span><span>Before/after photos implying <b>the app caused growth</b></span></li>
+          <li><span class="dot r"></span><span>Medical advice or diagnoses</span></li>
+          <li><span class="dot r"></span><span>Content targeting minors with weight/body-image messaging</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top:26px">
+      <h3>🚀 How to Join</h3>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><b>Apply</b><span>Send your social links &amp; content samples</span></div>
+        <div class="step"><div class="n">2</div><b>Review</b><span>We approve within 48 hours</span></div>
+        <div class="step"><div class="n">3</div><b>Get Access</b><span>Unique tracking code + dashboard</span></div>
+        <div class="step"><div class="n">4</div><b>Create</b><span>Share GetTaller with your audience</span></div>
+        <div class="step"><div class="n">5</div><b>Earn</b><span>Track installs &amp; revenue in real-time</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<div class="final-cta">
+  <h2>Ready to Grow Your Audience <span style="color:#34D399">and Your Earnings?</span></h2>
+  <p>Join GetTaller's affiliate program. Approval within 48 hours — and your unique tracking code is live immediately.</p>
+  <a class="btn green" href="mailto:GetTallerApp@gmail.com?subject=GetTaller%20Affiliate%20Application">Apply Now — GetTallerApp@gmail.com</a>
+  <div class="contact">Questions? Reach us at <a href="mailto:GetTallerApp@gmail.com">GetTallerApp@gmail.com</a></div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div><b>GetTaller</b> — Height Growth Tracker &amp; Coach · by <b>Grayonix Studios</b></div>
+    <div style="margin-top:6px">© 2026 Grayonix Studios · GetTaller is an educational health &amp; fitness app · Always consult a healthcare provider for medical concerns.</div>
+  </div>
+</footer>
+
+</body>
+</html>
