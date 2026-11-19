@@ -4,28 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="GetTaller - Unlock your height potential with AI-guided training and personalized nutrition plans.">
-    <title>GetTaller - AI-Powered Height Growth App</title>
+    <title>GetTaller - AI-Powered Height Growth</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/app-page.css">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-ink: #000000;
+            --color-ground: #FFFFFF;
+            --color-accent: #1E3FFF;
+            --font-display: "Archivo", Helvetica Now, Söhne, sans-serif;
+            --font-body: "Archivo", Helvetica Now, Söhne, sans-serif;
+            --font-mono: "JetBrains Mono", monospace;
+        }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { margin: 0; font-family: var(--font-body); font-size: 16px; line-height: 1.45; background: var(--color-ground); color: var(--color-ink); }
+        img { display: block; max-width: 100%; height: auto; }
+        h1, h2, h3 { font-family: var(--font-display); font-weight: 900; line-height: 1.2; text-transform: uppercase; letter-spacing: -0.03em; margin: 0; }
+        a { text-decoration: none; color: var(--color-accent); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+        .navbar { position: sticky; top: 0; z-index: 100; height: 72px; background: var(--color-ground); border-bottom: 1px solid var(--color-ink); }
+        .nav-container { display: flex; align-items: center; justify-content: space-between; height: 100%; max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+        .logo-link { display: inline-flex; align-items: center; color: var(--color-ink); }
+        .logo-img { width: 32px; height: 32px; display: block; }
+        .nav-menu { display: flex; align-items: center; gap: 4px; }
+        .nav-link { display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; font-size: 14px; font-weight: 500; color: var(--color-ink); }
+        .nav-link:hover { background: #eee; }
+        .back-link-container { padding: 24px 0 0; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-ink); }
+        .back-link svg { width: 16px; height: 16px; }
+        .app-header-section { padding: 100px 0; text-align: center; }
+        .app-header-icon { width: 96px; height: 96px; margin: 0 auto 24px; border-radius: 16px; }
+        .app-title { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 16px; }
+        .app-tagline { font-size: 1.25rem; font-weight: 700; margin-bottom: 16px; }
+        .app-description { max-width: 60ch; margin: 0 auto 32px; font-size: 1.1rem; line-height: 1.7; }
+        .app-badges { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+        .badge { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 12px; border: 1px solid var(--color-ink); border-radius: 0; font-weight: 600; }
+        .features-section { padding: 100px 0; border-top: 1px solid var(--color-ink); }
+        .section-header { max-width: 60ch; margin: 0 auto 48px; text-align: center; }
+        .section-title { font-size: 3rem; margin-bottom: 24px; }
+        .section-subtitle { font-size: 1.1rem; color: #666; }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+        .feature-card { border: 1px solid var(--color-ink); padding: 40px; }
+        .feature-icon { width: 44px; height: 44px; margin-bottom: 20px; }
+        .feature-card h3 { font-size: 1.5rem; margin-bottom: 16px; }
+        .feature-card p { font-size: 1rem; line-height: 1.7; color: #333; }
+        .screenshots-section { padding: 100px 0; border-top: 1px solid var(--color-ink); }
+        .screenshots-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+        .screenshot-card { border: 1px solid var(--color-ink); padding: 16px; text-align: center; }
+        .screenshot { width: 100%; margin-bottom: 12px; }
+        .screenshot-caption { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: #666; }
+        .download-section { padding: 100px 0; border-top: 1px solid var(--color-ink); text-align: center; }
+        .download-content h2 { font-size: 2.5rem; margin-bottom: 16px; }
+        .download-content p { max-width: 50ch; margin: 0 auto 32px; font-size: 1.1rem; color: #333; }
+        .download-links { display: flex; justify-content: center; gap: 16px; }
+        .cta-button { display: inline-flex; align-items: center; gap: 12px; padding: 16px 32px; background: var(--color-ink); color: var(--color-ground); font-family: var(--font-mono); font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; white-space: nowrap; }
+        .cta-button svg { width: 20px; height: 20px; }
+        .footer { padding: 60px 0; border-top: 1px solid var(--color-ink); }
+        .footer-content { display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center; }
+        .footer-brand { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+        .footer-tagline { font-size: 14px; color: #666; }
+        .footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
+        .footer-nav a { font-size: 14px; font-weight: 500; color: var(--color-ink); }
+        .footer-nav a:hover { color: var(--color-accent); }
+        .footer-copyright { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.05em; color: #666; }
+        @media (max-width: 768px) { .features-grid, .screenshots-grid { grid-template-columns: 1fr; } .container { padding: 0 24px; } .nav-container { padding: 0 24px; } .download-links { flex-direction: column; align-items: center; } }
+    </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
     <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <div class="nav-logo">
                 <a href="/" class="logo-link" aria-label="Grayonix Studios Home">
-                    <div class="logo-mark">G</div>
-                    <span class="logo-text">Grayonix Studios</span>
+                    <img src="../../assets/studio-logo.png" alt="" class="logo-img" width="32" height="32">
                 </a>
             </div>
-            <button class="hamburger-menu" id="hamburger-menu" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </button>
             <ul class="nav-menu" id="nav-menu" role="menubar">
                 <li role="none"><a href="/" class="nav-link">Home</a></li>
                 <li role="none"><a href="/#apps" class="nav-link">Apps</a></li>
@@ -33,34 +87,26 @@
             </ul>
         </div>
     </nav>
-
     <main>
-        <!-- Back Link -->
         <div class="container back-link-container">
             <a href="/" class="back-link">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
                 <span>Back to Apps</span>
             </a>
         </div>
-
-        <!-- App Header Section -->
         <section class="app-header-section" aria-labelledby="app-title">
             <div class="container">
-                <div class="app-header-content">
-                    <img src="../../assets/gettaller-icon.png" alt="" class="app-header-icon" loading="lazy">
-                    <h1 id="app-title" class="app-title">GetTaller</h1>
-                    <p class="app-tagline">Unlock Your Height Potential</p>
-                    <p class="app-description">GetTaller is an AI-powered mobile app designed to help you maximize your height through scientifically-guided training, personalized nutrition plans, and comprehensive progress tracking. Join thousands of users already on their growth journey.</p>
-                    <div class="app-badges">
-                        <span class="badge badge-android">Android</span>
-                        <span class="badge badge-offline">Offline First</span>
-                        <span class="badge badge-free">Free</span>
-                    </div>
+                <img src="../../assets/gettaller-icon.png" alt="" class="app-header-icon" loading="lazy">
+                <h1 id="app-title" class="app-title">GetTaller</h1>
+                <p class="app-tagline">Unlock Your Height Potential</p>
+                <p class="app-description">GetTaller is an AI-powered mobile app designed to help you maximize your height through scientifically-guided training, personalized nutrition plans, and comprehensive progress tracking.</p>
+                <div class="app-badges">
+                    <span class="badge">Android</span>
+                    <span class="badge">Growth Tracker</span>
+                    <span class="badge">Free</span>
                 </div>
             </div>
         </section>
-
-        <!-- Features Section -->
         <section class="features-section" aria-labelledby="features-title">
             <div class="container">
                 <header class="section-header">
@@ -77,7 +123,7 @@
                     </article>
                     <article class="feature-card">
                         <div class="feature-icon" aria-hidden="true">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
                         </div>
                         <h3>AI-Powered Coaching</h3>
                         <p>Get personalized coaching powered by artificial intelligence that adapts to your progress, fitness level, and individual growth trajectory.</p>
@@ -105,7 +151,7 @@
                     </article>
                     <article class="feature-card">
                         <div class="feature-icon" aria-hidden="true">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 0-10 10c0 4.99 5.5 7.19 10 11.5 4.5-4.31 10-6.51 10-11.5a10 10 0 0 0-10-10Z"/><path d="M12 6v6l4 2"/></svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
                         </div>
                         <h3>Sleep Optimization</h3>
                         <p>Learn the importance of quality sleep for growth and get personalized sleep tracking and optimization tips integrated into your daily plan.</p>
@@ -113,8 +159,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Screenshots Section -->
         <section class="screenshots-section" aria-labelledby="screenshots-title">
             <div class="container">
                 <header class="section-header">
@@ -123,41 +167,39 @@
                 </header>
                 <div class="screenshots-grid">
                     <figure class="screenshot-card">
-                        <img src="../../assets/screenshots/1.png" alt="GetTaller Dashboard - Overview of your height progress and daily plan" class="screenshot" loading="lazy">
+                        <img src="../../assets/screenshots/gettaller/1.png" alt="GetTaller Dashboard - Overview of your height progress and daily plan" class="screenshot" loading="lazy">
                         <figcaption class="screenshot-caption">Dashboard</figcaption>
                     </figure>
                     <figure class="screenshot-card">
-                        <img src="../../assets/screenshots/2.png" alt="GetTaller Training - Guided exercise interface with video demonstrations" class="screenshot" loading="lazy">
+                        <img src="../../assets/screenshots/gettaller/2.png" alt="GetTaller Training - Guided exercise interface with video demonstrations" class="screenshot" loading="lazy">
                         <figcaption class="screenshot-caption">Training</figcaption>
                     </figure>
                     <figure class="screenshot-card">
-                        <img src="../../assets/screenshots/3.png" alt="GetTaller Nutrition - Personalized meal plans and nutrition tracking" class="screenshot" loading="lazy">
+                        <img src="../../assets/screenshots/gettaller/3.png" alt="GetTaller Nutrition - Personalized meal plans and nutrition tracking" class="screenshot" loading="lazy">
                         <figcaption class="screenshot-caption">Nutrition</figcaption>
                     </figure>
                     <figure class="screenshot-card">
-                        <img src="../../assets/screenshots/4.png" alt="GetTaller Progress - Height tracking charts and analytics" class="screenshot" loading="lazy">
+                        <img src="../../assets/screenshots/gettaller/4.png" alt="GetTaller Progress - Height tracking charts and analytics" class="screenshot" loading="lazy">
                         <figcaption class="screenshot-caption">Progress</figcaption>
                     </figure>
                     <figure class="screenshot-card">
-                        <img src="../../assets/screenshots/5.png" alt="GetTaller Exercises - Guided stretching and posture routines" class="screenshot" loading="lazy">
+                        <img src="../../assets/screenshots/gettaller/5.png" alt="GetTaller Exercises - Guided stretching and posture routines" class="screenshot" loading="lazy">
                         <figcaption class="screenshot-caption">Exercises</figcaption>
                     </figure>
                     <figure class="screenshot-card">
-                        <img src="../../assets/screenshots/6.png" alt="GetTaller Sleep - Sleep tracking and optimization tips" class="screenshot" loading="lazy">
+                        <img src="../../assets/screenshots/gettaller/6.png" alt="GetTaller Sleep - Sleep tracking and optimization tips" class="screenshot" loading="lazy">
                         <figcaption class="screenshot-caption">Sleep</figcaption>
                     </figure>
                 </div>
             </div>
         </section>
-
-        <!-- Download Section -->
         <section class="download-section" aria-labelledby="download-title">
             <div class="container">
                 <div class="download-content">
                     <h2 id="download-title">Get Started Today</h2>
                     <p>Download GetTaller from the Google Play Store and begin your height growth journey. Free, science-backed, AI-guided.</p>
                     <div class="download-links">
-                        <a href="https://play.google.com/store/apps/details?id=com.grayonix.GetTaller" class="cta-button cta-primary" target="_blank" rel="noopener noreferrer">
+                        <a href="https://play.google.com/store/apps/details?id=com.grayonix.GetTaller" class="cta-button" target="_blank" rel="noopener noreferrer">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h-2v8h2v-8zm0 10h-2v2h2v-2z"/></svg>
                             <span>Download on Google Play</span>
                         </a>
@@ -166,18 +208,12 @@
             </div>
         </section>
     </main>
-
-    <!-- Footer -->
     <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="/" class="logo-link" aria-label="Grayonix Studios Home">
-                        <svg class="logo-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                            <rect width="32" height="32" rx="8" fill="currentColor"/>
-                            <path d="M8 12h16M8 16h12M8 20h8" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
-                        </svg>
-                        <span class="logo-text">Grayonix Studios</span>
+                        <img src="../../assets/studio-logo.png" alt="" class="logo-img" width="32" height="32">
                     </a>
                     <p class="footer-tagline">Building AI-powered apps for growth.</p>
                 </div>
@@ -191,7 +227,5 @@
             </div>
         </div>
     </footer>
-
-    <script src="../../js/main.js"></script>
 </body>
 </html>
