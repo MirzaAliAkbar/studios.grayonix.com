@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Grayonix Studios - Building AI-Powered Apps for Growth. DailySnap, GetTaller, OxClock Pocket.">
+    <meta name="description" content="Grayonix Studios — Building AI-powered mobile apps for growth: DailySnap, GetTaller, OxClock Pocket.">
     <title>Grayonix Studios</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <div class="nav-logo">
                 <a href="/" class="logo-link" aria-label="Grayonix Studios Home">
-                    <div class="logo-mark">G</div>
-                    <span class="logo-text">Grayonix Studios</span>
+                    <img src="assets/studio-logo.png" alt="" class="logo-img" width="36" height="36">
                 </a>
             </div>
             <button class="hamburger-menu" id="hamburger-menu" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
@@ -32,19 +30,12 @@
     </nav>
 
     <main>
-        <!-- Hero -->
         <section id="home" class="hero-section" aria-labelledby="hero-title">
-            <div class="hero-bg" aria-hidden="true">
-                <div class="mesh"></div>
-                <div class="orb orb-1"></div>
-                <div class="orb orb-2"></div>
-                <div class="orb orb-3"></div>
-            </div>
+            <div class="hero-bg" aria-hidden="true"></div>
             <div class="container">
                 <div class="hero-content">
-                    <div class="hero-kicker">
-                        <span class="badge-dot"></span>
-                        AI-Powered Mobile Apps · Built for Growth
+                    <div class="hero-logo" aria-hidden="true">
+                        <img src="assets/studio-logo.png" alt="" class="hero-logo-img">
                     </div>
                     <h1 id="hero-title" class="hero-title">Grayonix Studios</h1>
                     <p class="hero-subtitle">Free, accessible mobile apps powered by artificial intelligence. Built to help you grow — privately, locally, and without compromise.</p>
@@ -54,18 +45,20 @@
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </a>
                     </div>
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <span class="stat-value">3</span>
-                            <span class="stat-label">Apps Live</span>
+                    <div class="hero-trust">
+                        <div class="trust-item">
+                            <span class="trust-value">3</span>
+                            <span class="trust-label">Apps Live</span>
                         </div>
-                        <div class="stat">
-                            <span class="stat-value">100%</span>
-                            <span class="stat-label">Free</span>
+                        <div class="trust-divider" aria-hidden="true"></div>
+                        <div class="trust-item">
+                            <span class="trust-value">100%</span>
+                            <span class="trust-label">Free Forever</span>
                         </div>
-                        <div class="stat">
-                            <span class="stat-value">Private</span>
-                            <span class="stat-label">First</span>
+                        <div class="trust-divider" aria-hidden="true"></div>
+                        <div class="trust-item">
+                            <span class="trust-value">Private</span>
+                            <span class="trust-label">First</span>
                         </div>
                     </div>
                 </div>
@@ -75,15 +68,14 @@
             </div>
         </section>
 
-        <!-- About / Values -->
         <section id="about" class="about-section" aria-labelledby="about-title">
             <div class="container">
                 <div class="section-header">
-                    <h2 id="about-title" class="section-title">Who We Are</h2>
-                    <p class="section-subtitle">Grayonix Studios builds free, accessible mobile apps powered by artificial intelligence. Our mission is to empower users with intelligent tools that help them achieve personal growth — all while respecting your privacy and keeping data on your device.</p>
+                    <h2 id="about-title" class="section-title">How We Build</h2>
+                    <p class="section-subtitle">Three principles that guide every decision — from the first line of code to the final pixel on screen.</p>
                 </div>
                 <div class="values-grid">
-                    <article class="value-card">
+                    <article class="value-card" data-reveal>
                         <div class="value-icon" aria-hidden="true">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                         </div>
@@ -92,7 +84,7 @@
                             <p>All data stays on your device. No cloud tracking, no data harvesting, no accounts required.</p>
                         </div>
                     </article>
-                    <article class="value-card">
+                    <article class="value-card" data-reveal>
                         <div class="value-icon" aria-hidden="true">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                         </div>
@@ -101,7 +93,7 @@
                             <p>Intelligent features that adapt to you — not generic algorithms. Local AI where possible.</p>
                         </div>
                     </article>
-                    <article class="value-card">
+                    <article class="value-card" data-reveal>
                         <div class="value-icon" aria-hidden="true">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
                         </div>
@@ -114,7 +106,6 @@
             </div>
         </section>
 
-        <!-- Apps -->
         <section id="apps" class="apps-section" aria-labelledby="apps-title">
             <div class="container">
                 <div class="section-header">
@@ -122,15 +113,9 @@
                     <p class="section-subtitle">Three AI-powered tools for daily growth — each solving a real problem we had ourselves.</p>
                 </div>
                 <div class="apps-grid">
-                    <article class="app-card" data-app="dailysnap">
+                    <article class="app-card" data-app="dailysnap" data-reveal>
                         <div class="app-card-media">
                             <img src="assets/dailysnap-icon.png" alt="" class="app-icon" loading="lazy">
-                            <div class="app-card-overlay">
-                                <a href="/app/dailysnap/" class="card-cta">
-                                    <span>View App</span>
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                                </a>
-                            </div>
                         </div>
                         <div class="app-card-content">
                             <div class="app-meta">
@@ -143,15 +128,9 @@
                         </div>
                     </article>
 
-                    <article class="app-card" data-app="gettaller">
+                    <article class="app-card" data-app="gettaller" data-reveal>
                         <div class="app-card-media">
                             <img src="assets/gettaller-icon.png" alt="" class="app-icon" loading="lazy">
-                            <div class="app-card-overlay">
-                                <a href="/app/gettaller/" class="card-cta">
-                                    <span>View App</span>
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                                </a>
-                            </div>
                         </div>
                         <div class="app-card-content">
                             <div class="app-meta">
@@ -164,15 +143,9 @@
                         </div>
                     </article>
 
-                    <article class="app-card" data-app="oxclock-pocket">
+                    <article class="app-card" data-app="oxclock-pocket" data-reveal>
                         <div class="app-card-media">
                             <img src="assets/oxclock-pocket-icon.png" alt="" class="app-icon" loading="lazy">
-                            <div class="app-card-overlay">
-                                <a href="/app/oxclock-pocket/" class="card-cta">
-                                    <span>View App</span>
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                                </a>
-                            </div>
                         </div>
                         <div class="app-card-content">
                             <div class="app-meta">
@@ -188,7 +161,6 @@
             </div>
         </section>
 
-        <!-- Contact -->
         <section id="contact" class="contact-section" aria-labelledby="contact-title">
             <div class="container">
                 <div class="section-header">
@@ -205,14 +177,12 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="/" class="logo-link" aria-label="Grayonix Studios Home">
-                        <div class="logo-mark">G</div>
-                        <span class="logo-text">Grayonix Studios</span>
+                        <img src="assets/studio-logo.png" alt="" class="logo-img" width="32" height="32">
                     </a>
                     <p class="footer-tagline">Building AI-powered apps for growth.</p>
                 </div>
