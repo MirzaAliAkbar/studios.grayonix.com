@@ -7,59 +7,54 @@
     <title>Grayonix Studios</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
+    <!-- Navigation -->
     <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <div class="nav-logo">
                 <a href="/" class="logo-link" aria-label="Grayonix Studios Home">
-                    <svg class="logo-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                        <rect width="32" height="32" rx="8" fill="currentColor"/>
-                        <path d="M8 12h16M8 16h12M8 20h8" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
-                    </svg>
+                    <div class="logo-mark">G</div>
                     <span class="logo-text">Grayonix Studios</span>
                 </a>
             </div>
             <button class="hamburger-menu" id="hamburger-menu" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
+                <span></span><span></span><span></span>
             </button>
             <ul class="nav-menu" id="nav-menu" role="menubar">
-                <li role="none"><a href="#home" class="nav-link" role="menuitem">Home</a></li>
-                <li role="none"><a href="#apps" class="nav-link" role="menuitem">Apps</a></li>
-                <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
+                <li role="none"><a href="#home" class="nav-link">Home</a></li>
+                <li role="none"><a href="#apps" class="nav-link">Apps</a></li>
+                <li role="none"><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <main>
-        <!-- Hero Section -->
+        <!-- Hero -->
         <section id="home" class="hero-section" aria-labelledby="hero-title">
             <div class="hero-bg" aria-hidden="true">
-                <div class="grid-pattern"></div>
+                <div class="mesh"></div>
                 <div class="orb orb-1"></div>
                 <div class="orb orb-2"></div>
                 <div class="orb orb-3"></div>
             </div>
             <div class="container">
                 <div class="hero-content">
-                    <div class="hero-badge" aria-hidden="true">
+                    <div class="hero-kicker">
                         <span class="badge-dot"></span>
-                        <span>AI-Powered Mobile Apps</span>
+                        AI-Powered Mobile Apps · Built for Growth
                     </div>
                     <h1 id="hero-title" class="hero-title">Grayonix Studios</h1>
-                    <p class="hero-subtitle">Building free, accessible mobile apps powered by artificial intelligence to help you grow.</p>
+                    <p class="hero-subtitle">Free, accessible mobile apps powered by artificial intelligence. Built to help you grow — privately, locally, and without compromise.</p>
                     <div class="hero-cta">
                         <a href="#apps" class="cta-button cta-primary">
                             <span>Explore Our Apps</span>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                         </a>
                     </div>
-                    <div class="hero-stats" aria-label="Studio statistics">
+                    <div class="hero-stats">
                         <div class="stat">
                             <span class="stat-value">3</span>
                             <span class="stat-label">Apps Live</span>
@@ -69,7 +64,7 @@
                             <span class="stat-label">Free</span>
                         </div>
                         <div class="stat">
-                            <span class="stat-value">Privacy</span>
+                            <span class="stat-value">Private</span>
                             <span class="stat-label">First</span>
                         </div>
                     </div>
@@ -80,40 +75,46 @@
             </div>
         </section>
 
-        <!-- About Section -->
+        <!-- About / Values -->
         <section id="about" class="about-section" aria-labelledby="about-title">
             <div class="container">
                 <div class="section-header">
                     <h2 id="about-title" class="section-title">Who We Are</h2>
-                    <p class="section-subtitle">Grayonix Studios builds free, accessible mobile apps powered by artificial intelligence. Our mission is to empower users with intelligent tools that help them achieve their personal growth goals through technology — all while respecting your privacy and storing data locally on your device.</p>
+                    <p class="section-subtitle">Grayonix Studios builds free, accessible mobile apps powered by artificial intelligence. Our mission is to empower users with intelligent tools that help them achieve personal growth — all while respecting your privacy and keeping data on your device.</p>
                 </div>
                 <div class="values-grid">
                     <article class="value-card">
                         <div class="value-icon" aria-hidden="true">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                         </div>
-                        <h3>Privacy First</h3>
-                        <p>All data stays on your device. No cloud tracking, no data harvesting, no accounts required.</p>
+                        <div class="value-content">
+                            <h3>Privacy First</h3>
+                            <p>All data stays on your device. No cloud tracking, no data harvesting, no accounts required.</p>
+                        </div>
                     </article>
                     <article class="value-card">
                         <div class="value-icon" aria-hidden="true">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                         </div>
-                        <h3>AI Enhanced</h3>
-                        <p>Intelligent features that adapt to you — not generic algorithms. Local AI where possible.</p>
+                        <div class="value-content">
+                            <h3>AI Enhanced</h3>
+                            <p>Intelligent features that adapt to you — not generic algorithms. Local AI where possible.</p>
+                        </div>
                     </article>
                     <article class="value-card">
                         <div class="value-icon" aria-hidden="true">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
                         </div>
-                        <h3>Free Forever</h3>
-                        <p>No subscriptions, no hidden fees, no paywalls. Full features available to everyone.</p>
+                        <div class="value-content">
+                            <h3>Free Forever</h3>
+                            <p>No subscriptions, no hidden fees, no paywalls. Full features available to everyone.</p>
+                        </div>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- Featured Apps Section -->
+        <!-- Apps -->
         <section id="apps" class="apps-section" aria-labelledby="apps-title">
             <div class="container">
                 <div class="section-header">
@@ -121,7 +122,6 @@
                     <p class="section-subtitle">Three AI-powered tools for daily growth — each solving a real problem we had ourselves.</p>
                 </div>
                 <div class="apps-grid">
-                    <!-- DailySnap -->
                     <article class="app-card" data-app="dailysnap">
                         <div class="app-card-media">
                             <img src="assets/dailysnap-icon.png" alt="" class="app-icon" loading="lazy">
@@ -143,7 +143,6 @@
                         </div>
                     </article>
 
-                    <!-- GetTaller -->
                     <article class="app-card" data-app="gettaller">
                         <div class="app-card-media">
                             <img src="assets/gettaller-icon.png" alt="" class="app-icon" loading="lazy">
@@ -165,7 +164,6 @@
                         </div>
                     </article>
 
-                    <!-- OxClock Pocket -->
                     <article class="app-card" data-app="oxclock-pocket">
                         <div class="app-card-media">
                             <img src="assets/oxclock-pocket-icon.png" alt="" class="app-icon" loading="lazy">
@@ -190,7 +188,7 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- Contact -->
         <section id="contact" class="contact-section" aria-labelledby="contact-title">
             <div class="container">
                 <div class="section-header">
@@ -213,10 +211,7 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="/" class="logo-link" aria-label="Grayonix Studios Home">
-                        <svg class="logo-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                            <rect width="32" height="32" rx="8" fill="currentColor"/>
-                            <path d="M8 12h16M8 16h12M8 20h8" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
-                        </svg>
+                        <div class="logo-mark">G</div>
                         <span class="logo-text">Grayonix Studios</span>
                     </a>
                     <p class="footer-tagline">Building AI-powered apps for growth.</p>
