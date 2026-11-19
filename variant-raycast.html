@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grayonix Studios — Raycast Style</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Raycast Style — warm dark, glassy, keyboard-first, soft shadows */
+        :root {
+            --color-ground: #0F0F11;
+            --color-surface: rgba(255,255,255,0.06);
+            --color-border: rgba(255,255,255,0.10);
+            --color-fg: #FFFFFF;
+            --color-fg-muted: #B0B3B8;
+            --color-accent: #FF6363;
+            --font-display: "Archivo", Söhne, system-ui, sans-serif;
+            --font-body: "Archivo", system-ui, sans-serif;
+            --font-mono: "JetBrains Mono", "Fira Code", monospace;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --shadow: 0 16px 40px rgba(0,0,0,0.4);
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.6;
+            background: var(--color-ground);
+            color: var(--color-fg);
+        }
+        img { display: block; max-width: 100%; height: auto; }
+        h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.1; letter-spacing: -0.02em; margin: 0; }
+        a { text-decoration: none; }
+        code { font-family: var(--font-mono); font-size: 0.9em; padding: 2px 6px; background: var(--color-surface); border: 1px solid var(--color-border); }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 40px; }
+
+        .hero {
+            padding: 120px 0;
+            text-align: center;
+        }
+        .hero-logo { width: 100px; margin: 0 auto 24px; border-radius: var(--radius-md); }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 16px; }
+        .hero p { font-size: 1.25rem; max-width: 50ch; margin: 0 auto 40px; color: var(--color-fg-muted); }
+        .hero-cta { margin-bottom: 60px; }
+        .cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            color: var(--color-fg);
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: var(--radius-md);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .section { padding: 80px 0; border-top: 1px solid var(--color-border); }
+        .section h2 { font-size: 1.75rem; margin-bottom: 24px; text-align: center; }
+        .section p { max-width: 50ch; margin: 0 auto; text-align: center; color: var(--color-fg-muted); }
+
+        .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .value-card {
+            padding: 32px;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            background: var(--color-surface);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .value-card:hover { transform: translateY(-4px); }
+        .value-card h3 { font-size: 1.25rem; margin-bottom: 12px; }
+        .value-card p { font-size: 0.95rem; color: var(--color-fg-muted); }
+
+        .apps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .app-card {
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            background: var(--color-surface);
+            padding: 32px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .app-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+        .app-icon { width: 72px; height: 72px; margin: 0 auto 16px; border-radius: var(--radius-md); }
+        .app-card h3 { font-size: 1.25rem; margin-bottom: 12px; }
+        .app-card p { font-size: 0.95rem; color: var(--color-fg-muted); }
+
+        .contact { padding: 80px 0; text-align: center; border-top: 1px solid var(--color-border); }
+        .contact a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            background: var(--color-surface);
+            color: var(--color-fg);
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .contact a:hover { background: var(--color-border); }
+
+        @media (max-width: 768px) {
+            .values-grid, .apps-grid { grid-template-columns: 1fr; }
+            .container { padding: 0 24px; }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <section class="hero">
+            <img src="assets/studio-logo.png" alt="" class="hero-logo" width="100" height="100">
+            <h1>Grayonix Studios</h1>
+            <p>Free, accessible mobile apps powered by artificial intelligence. Built to help you grow — privately, locally, and without compromise.</p>
+            <div class="hero-cta">
+                <a href="#apps" class="cta">Explore Our Apps</a>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>How We Build</h2>
+            <p>Three principles that guide every decision — from the first line of code to the final pixel on screen.</p>
+            <div class="values-grid">
+                <article class="value-card">
+                    <h3>Privacy First</h3>
+                    <p>All data stays on your device. No cloud tracking, no data harvesting, no accounts required.</p>
+                </article>
+                <article class="value-card">
+                    <h3>AI Enhanced</h3>
+                    <p>Intelligent features that adapt to you — not generic algorithms. Local AI where possible.</p>
+                </article>
+                <article class="value-card">
+                    <h3>Free Forever</h3>
+                    <p>No subscriptions, no hidden fees, no paywalls. Full features available to everyone.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="apps">
+            <h2>Our Apps</h2>
+            <p>Three AI-powered tools for daily growth — each solving a real problem we had ourselves.</p>
+            <div class="apps-grid">
+                <article class="app-card">
+                    <img src="assets/dailysnap-icon.png" alt="" class="app-icon" width="72" height="72">
+                    <h3>DailySnap</h3>
+                    <p>Your AI-powered daily diary. Auto-captures weather, location, and moments throughout the day.</p>
+                </article>
+                <article class="app-card">
+                    <img src="assets/gettaller-icon.png" alt="" class="app-icon" width="72" height="72">
+                    <h3>GetTaller</h3>
+                    <p>Unlock your height potential with AI-guided training and personalized nutrition plans.</p>
+                </article>
+                <article class="app-card">
+                    <img src="assets/oxclock-pocket-icon.png" alt="" class="app-icon" width="72" height="72">
+                    <h3>OxClock Pocket</h3>
+                    <p>A compact floating control center for time — timers, stopwatch, world clocks, pomodoro.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="contact">
+            <p>Have questions, feedback, or want to collaborate? We'd love to hear from you.</p>
+            <p style="margin-top: 16px;"><a href="mailto:AliAkbar@tutamail.com">AliAkbar@tutamail.com</a></p>
+        </section>
+    </main>
+</body>
+</html>
