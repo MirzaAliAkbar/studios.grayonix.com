@@ -7,29 +7,32 @@
     <title>DailySnap - AI-Powered Daily Diary</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/app-page.css">
 </head>
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="/" class="logo-link">
-                    <img src="../../assets/logo.svg" alt="Grayonix Studios Logo" class="logo-img">
+                <a href="/" class="logo-link" aria-label="Grayonix Studios Home">
+                    <svg class="logo-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                        <rect width="32" height="32" rx="8" fill="currentColor"/>
+                        <path d="M8 12h16M8 16h12M8 20h8" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                    </svg>
                     <span class="logo-text">Grayonix Studios</span>
                 </a>
             </div>
-            <button class="hamburger-menu" id="hamburger-menu" aria-label="Toggle navigation menu">
-                <span></span>
-                <span></span>
-                <span></span>
+            <button class="hamburger-menu" id="hamburger-menu" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
             </button>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="/" class="nav-link">Home</a></li>
-                <li><a href="/#apps" class="nav-link">Apps</a></li>
-                <li><a href="/#contact" class="nav-link">Contact</a></li>
+            <ul class="nav-menu" id="nav-menu" role="menubar">
+                <li role="none"><a href="/" class="nav-link">Home</a></li>
+                <li role="none"><a href="/#apps" class="nav-link">Apps</a></li>
+                <li role="none"><a href="/#contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -37,83 +40,165 @@
     <main>
         <!-- Back Link -->
         <div class="container back-link-container">
-            <a href="/" class="back-link">← Back to Apps</a>
+            <a href="/" class="back-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                <span>Back to Apps</span>
+            </a>
         </div>
 
         <!-- App Header Section -->
-        <section class="app-header-section">
+        <section class="app-header-section" aria-labelledby="app-title">
             <div class="container">
-                <img src="../../assets/dailysnap-icon.png" alt="DailySnap App Icon" class="app-header-icon">
-                <h1 class="app-title">DailySnap</h1>
-                <p class="app-tagline">Your AI-Powered Daily Diary</p>
-                <p class="app-description">Stop staring at a blank page. DailySnap auto-fills your date, weather, and location — you just log what happened. Write a quick moment, snap a photo, or track your mood, and let AI turn it all into a beautifully written diary entry at the end of the day.</p>
+                <div class="app-header-content">
+                    <img src="../../assets/dailysnap-icon.png" alt="" class="app-header-icon" loading="lazy">
+                    <h1 id="app-title" class="app-title">DailySnap</h1>
+                    <p class="app-tagline">Your AI-Powered Daily Diary</p>
+                    <p class="app-description">Stop staring at a blank page. DailySnap auto-fills your date, weather, and location — you just log what happened. Write a quick moment, snap a photo, or track your mood, and let AI turn it all into a beautifully written diary entry at the end of the day.</p>
+                    <div class="app-badges">
+                        <span class="badge badge-android">Android</span>
+                        <span class="badge badge-offline">Offline First</span>
+                        <span class="badge badge-free">Free</span>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Features Section -->
-        <section class="features-section">
+        <section class="features-section" aria-labelledby="features-title">
             <div class="container">
-                <h2>Key Features</h2>
+                <header class="section-header">
+                    <h2 id="features-title" class="section-title">Key Features</h2>
+                    <p class="section-subtitle">Everything you need to capture your day, beautifully written by AI.</p>
+                </header>
                 <div class="features-grid">
-                    <div class="feature-card">
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/><path d="M15 5l4 4"/></svg>
+                        </div>
                         <h3>AI Diary Generator</h3>
                         <p>Transform your raw notes, meals, mood, and daily moments into a beautifully written first-person diary entry in seconds. Edit and tweak the output anytime.</p>
-                    </div>
-                    <div class="feature-card">
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                        </div>
                         <h3>Moment Tracking</h3>
                         <p>Log unlimited moments throughout the day with mood, text notes, and photo attachments. Swipe to delete any moment you no longer need.</p>
-                    </div>
-                    <div class="feature-card">
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                        </div>
                         <h3>Mood Calendar</h3>
                         <p>See your entire month at a glance with mood-colored indicators. Tap any day to read your full diary entry with all moments and photos.</p>
-                    </div>
-                    <div class="feature-card">
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 18v4"/></svg>
+                        </div>
                         <h3>Auto-Fill</h3>
                         <p>Weather, date, day of week, and location fill in automatically. Less typing, more living. Everything you need is in one screen.</p>
-                    </div>
-                    <div class="feature-card">
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="12" rx="10" ry="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                        </div>
                         <h3>Cloud Backup</h3>
                         <p>Back up your entire diary to your own Google Drive. Restore it on a new device anytime. Free for everyone, no server needed.</p>
-                    </div>
-                    <div class="feature-card">
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9h8"/></svg>
+                        </div>
                         <h3>PDF Export</h3>
                         <p>Export any day's diary as a beautifully formatted PDF with your diary text, moments, photos, and daily details. Share it or save it.</p>
-                    </div>
+                    </article>
                 </div>
             </div>
         </section>
 
         <!-- Screenshots Section -->
-        <section class="screenshots-section">
+        <section class="screenshots-section" aria-labelledby="screenshots-title">
             <div class="container">
-                <h2>App Screenshots</h2>
+                <header class="section-header">
+                    <h2 id="screenshots-title" class="section-title">App Screenshots</h2>
+                    <p class="section-subtitle">Clean, focused interface — everything you need, nothing you don't.</p>
+                </header>
                 <div class="screenshots-grid">
-                    <img src="../../assets/screenshots/dailysnap-1.png" alt="DailySnap Timeline - Your moments with mood and timestamps" class="screenshot">
-                    <img src="../../assets/screenshots/dailysnap-2.png" alt="DailySnap Compose - Auto-fill weather, mood, and generate AI diary" class="screenshot">
-                    <img src="../../assets/screenshots/dailysnap-3.png" alt="DailySnap Calendar - Mood-colored month view with diary entries" class="screenshot">
+                    <figure class="screenshot-card">
+                        <img src="../../assets/screenshots/dailysnap/1.png" alt="DailySnap main timeline showing moments with mood indicators and timestamps" class="screenshot" loading="lazy">
+                        <figcaption class="screenshot-caption">Timeline</figcaption>
+                    </figure>
+                    <figure class="screenshot-card">
+                        <img src="../../assets/screenshots/dailysnap/2.png" alt="DailySnap compose screen with auto-filled weather, mood picker, and AI diary generation" class="screenshot" loading="lazy">
+                        <figcaption class="screenshot-caption">Compose</figcaption>
+                    </figure>
+                    <figure class="screenshot-card">
+                        <img src="../../assets/screenshots/dailysnap/3.png" alt="DailySnap calendar view with mood-colored month and diary entries" class="screenshot" loading="lazy">
+                        <figcaption class="screenshot-caption">Calendar</figcaption>
+                    </figure>
+                    <figure class="screenshot-card">
+                        <img src="../../assets/screenshots/dailysnap/4.png" alt="DailySnap moment detail with photo, mood, and text" class="screenshot" loading="lazy">
+                        <figcaption class="screenshot-caption">Moment Detail</figcaption>
+                    </figure>
+                    <figure class="screenshot-card">
+                        <img src="../../assets/screenshots/dailysnap/5.png" alt="DailySnap AI diary generation result with edit options" class="screenshot" loading="lazy">
+                        <figcaption class="screenshot-caption">AI Diary</figcaption>
+                    </figure>
+                    <figure class="screenshot-card">
+                        <img src="../../assets/screenshots/dailysnap/6.png" alt="DailySnap settings and backup options" class="screenshot" loading="lazy">
+                        <figcaption class="screenshot-caption">Settings</figcaption>
+                    </figure>
+                    <figure class="screenshot-card">
+                        <img src="../../assets/screenshots/dailysnap/7.png" alt="DailySnap PDF export preview with formatted diary entry" class="screenshot" loading="lazy">
+                        <figcaption class="screenshot-caption">PDF Export</figcaption>
+                    </figure>
+                    <figure class="screenshot-card">
+                        <img src="../../assets/screenshots/dailysnap/8.png" alt="DailySnap onboarding and theme selection" class="screenshot" loading="lazy">
+                        <figcaption class="screenshot-caption">Onboarding</figcaption>
+                    </figure>
                 </div>
             </div>
         </section>
 
         <!-- Download Section -->
-        <section class="download-section">
+        <section class="download-section" aria-labelledby="download-title">
             <div class="container">
-                <h2>Start Capturing Your Story</h2>
-                <p>Download DailySnap from the Google Play Store and begin your journaling journey today.</p>
-                <a href="https://play.google.com/store/apps/details?id=com.grayonix.DailySnap" class="cta-button cta-primary" target="_blank" rel="noopener noreferrer">Download on Google Play</a>
+                <div class="download-content">
+                    <h2 id="download-title">Start Capturing Your Story</h2>
+                    <p>Download DailySnap from the Google Play Store and begin your journaling journey today. Free, private, AI-powered.</p>
+                    <div class="download-links">
+                        <a href="https://play.google.com/store/apps/details?id=com.grayonix.DailySnap" class="cta-button cta-primary" target="_blank" rel="noopener noreferrer">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h-2v8h2v-8zm0 10h-2v2h2v-2z"/></svg>
+                            <span>Download on Google Play</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2026 Grayonix Studios. All rights reserved.</p>
-                <div class="footer-links">
+                <div class="footer-brand">
+                    <a href="/" class="logo-link" aria-label="Grayonix Studios Home">
+                        <svg class="logo-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                            <rect width="32" height="32" rx="8" fill="currentColor"/>
+                            <path d="M8 12h16M8 16h12M8 20h8" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                        <span class="logo-text">Grayonix Studios</span>
+                    </a>
+                    <p class="footer-tagline">Building AI-powered apps for growth.</p>
+                </div>
+                <nav class="footer-nav" aria-label="Footer navigation">
+                    <a href="/#apps">Apps</a>
+                    <a href="/#contact">Contact</a>
                     <a href="../../docs/dailysnap-privacy-policy.html">Privacy Policy</a>
                     <a href="../../docs/dailysnap-terms-of-service.html">Terms of Service</a>
-                </div>
+                </nav>
+                <p class="footer-copyright">&copy; 2026 Grayonix Studios. All rights reserved.</p>
             </div>
         </div>
     </footer>

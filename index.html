@@ -3,87 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Grayonix Studios - Building AI-Powered Apps for Growth">
+    <meta name="description" content="Grayonix Studios - Building AI-Powered Apps for Growth. DailySnap, GetTaller, OxClock Pocket.">
     <title>Grayonix Studios</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="Untitled design.png" alt="Grayonix Studios Logo" class="logo-img">
-                <span class="logo-text">Grayonix Studios</span>
+                <a href="/" class="logo-link" aria-label="Grayonix Studios Home">
+                    <svg class="logo-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                        <rect width="32" height="32" rx="8" fill="currentColor"/>
+                        <path d="M8 12h16M8 16h12M8 20h8" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                    </svg>
+                    <span class="logo-text">Grayonix Studios</span>
+                </a>
             </div>
-            <button class="hamburger-menu" id="hamburger-menu" aria-label="Toggle navigation menu">
-                <span></span>
-                <span></span>
-                <span></span>
+            <button class="hamburger-menu" id="hamburger-menu" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
             </button>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#apps" class="nav-link">Apps</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+            <ul class="nav-menu" id="nav-menu" role="menubar">
+                <li role="none"><a href="#home" class="nav-link" role="menuitem">Home</a></li>
+                <li role="none"><a href="#apps" class="nav-link" role="menuitem">Apps</a></li>
+                <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <main>
         <!-- Hero Section -->
-        <section id="home" class="hero-section">
+        <section id="home" class="hero-section" aria-labelledby="hero-title">
+            <div class="hero-bg" aria-hidden="true">
+                <div class="grid-pattern"></div>
+                <div class="orb orb-1"></div>
+                <div class="orb orb-2"></div>
+                <div class="orb orb-3"></div>
+            </div>
             <div class="container">
-                <h1 class="hero-title">Grayonix Studios</h1>
-                <p class="hero-subtitle">Building AI-Powered Apps for Growth</p>
-                <a href="#apps" class="cta-button cta-primary">Explore Our Apps</a>
+                <div class="hero-content">
+                    <div class="hero-badge" aria-hidden="true">
+                        <span class="badge-dot"></span>
+                        <span>AI-Powered Mobile Apps</span>
+                    </div>
+                    <h1 id="hero-title" class="hero-title">Grayonix Studios</h1>
+                    <p class="hero-subtitle">Building free, accessible mobile apps powered by artificial intelligence to help you grow.</p>
+                    <div class="hero-cta">
+                        <a href="#apps" class="cta-button cta-primary">
+                            <span>Explore Our Apps</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                    <div class="hero-stats" aria-label="Studio statistics">
+                        <div class="stat">
+                            <span class="stat-value">3</span>
+                            <span class="stat-label">Apps Live</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">100%</span>
+                            <span class="stat-label">Free</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">Privacy</span>
+                            <span class="stat-label">First</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
             </div>
         </section>
 
         <!-- About Section -->
-        <section id="about" class="about-section">
+        <section id="about" class="about-section" aria-labelledby="about-title">
             <div class="container">
-                <h2>Who We Are</h2>
-                <p>Grayonix Studios builds free, accessible mobile apps powered by artificial intelligence. Our mission is to empower users with intelligent tools that help them achieve their personal growth goals through technology.</p>
+                <div class="section-header">
+                    <h2 id="about-title" class="section-title">Who We Are</h2>
+                    <p class="section-subtitle">Grayonix Studios builds free, accessible mobile apps powered by artificial intelligence. Our mission is to empower users with intelligent tools that help them achieve their personal growth goals through technology — all while respecting your privacy and storing data locally on your device.</p>
+                </div>
+                <div class="values-grid">
+                    <article class="value-card">
+                        <div class="value-icon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h3>Privacy First</h3>
+                        <p>All data stays on your device. No cloud tracking, no data harvesting, no accounts required.</p>
+                    </article>
+                    <article class="value-card">
+                        <div class="value-icon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <h3>AI Enhanced</h3>
+                        <p>Intelligent features that adapt to you — not generic algorithms. Local AI where possible.</p>
+                    </article>
+                    <article class="value-card">
+                        <div class="value-icon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        </div>
+                        <h3>Free Forever</h3>
+                        <p>No subscriptions, no hidden fees, no paywalls. Full features available to everyone.</p>
+                    </article>
+                </div>
             </div>
         </section>
 
         <!-- Featured Apps Section -->
-        <section id="apps" class="apps-section">
+        <section id="apps" class="apps-section" aria-labelledby="apps-title">
             <div class="container">
-                <h2>Our Apps</h2>
+                <div class="section-header">
+                    <h2 id="apps-title" class="section-title">Our Apps</h2>
+                    <p class="section-subtitle">Three AI-powered tools for daily growth — each solving a real problem we had ourselves.</p>
+                </div>
                 <div class="apps-grid">
-                    <div class="app-card">
-                        <img src="assets/dailysnap-icon.png" alt="DailySnap App Icon" class="app-icon">
-                        <h3>DailySnap</h3>
-                        <p>Your AI-powered daily diary. Auto-captures weather, location, and moments throughout the day. Let AI write your diary in seconds. Track your mood, log photos, and look back on any day — all stored privately on your device.</p>
-                        <a href="/app/dailysnap/" class="cta-button cta-secondary">View App</a>
-                    </div>
-                    <div class="app-card">
-                        <img src="assets/gettaller-icon.png" alt="GetTaller App Icon" class="app-icon">
-                        <h3>GetTaller</h3>
-                        <p>Unlock your height potential with AI-guided training and personalized nutrition plans. Track your progress with precision and join thousands of users on their growth journey.</p>
-                        <a href="/app/gettaller/" class="cta-button cta-secondary">View App</a>
-                    </div>
+                    <!-- DailySnap -->
+                    <article class="app-card" data-app="dailysnap">
+                        <div class="app-card-media">
+                            <img src="assets/dailysnap-icon.png" alt="" class="app-icon" loading="lazy">
+                            <div class="app-card-overlay">
+                                <a href="/app/dailysnap/" class="card-cta">
+                                    <span>View App</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="app-card-content">
+                            <div class="app-meta">
+                                <span class="app-tag">AI Diary</span>
+                                <span class="app-platform">Android</span>
+                            </div>
+                            <h3>DailySnap</h3>
+                            <p>Your AI-powered daily diary. Auto-captures weather, location, and moments throughout the day. Let AI write your diary in seconds. Track your mood, log photos, and look back on any day — all stored privately on your device.</p>
+                            <a href="/app/dailysnap/" class="card-link">View Details →</a>
+                        </div>
+                    </article>
+
+                    <!-- GetTaller -->
+                    <article class="app-card" data-app="gettaller">
+                        <div class="app-card-media">
+                            <img src="assets/gettaller-icon.png" alt="" class="app-icon" loading="lazy">
+                            <div class="app-card-overlay">
+                                <a href="/app/gettaller/" class="card-cta">
+                                    <span>View App</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="app-card-content">
+                            <div class="app-meta">
+                                <span class="app-tag">Growth</span>
+                                <span class="app-platform">Android</span>
+                            </div>
+                            <h3>GetTaller</h3>
+                            <p>Unlock your height potential with AI-guided training and personalized nutrition plans. Track your progress with precision and join thousands of users on their growth journey.</p>
+                            <a href="/app/gettaller/" class="card-link">View Details →</a>
+                        </div>
+                    </article>
+
+                    <!-- OxClock Pocket -->
+                    <article class="app-card" data-app="oxclock-pocket">
+                        <div class="app-card-media">
+                            <img src="assets/oxclock-pocket-icon.png" alt="" class="app-icon" loading="lazy">
+                            <div class="app-card-overlay">
+                                <a href="/app/oxclock-pocket/" class="card-cta">
+                                    <span>View App</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="app-card-content">
+                            <div class="app-meta">
+                                <span class="app-tag">Productivity</span>
+                                <span class="app-platform">Android</span>
+                            </div>
+                            <h3>OxClock Pocket</h3>
+                            <p>A compact floating control center for time — timers, stopwatch, world clocks, pomodoro, intervals, calendar, alarms, and tasbeeh counter. All in one precise, offline-first gadget.</p>
+                            <a href="/app/oxclock-pocket/" class="card-link">View Details →</a>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="contact-section">
+        <section id="contact" class="contact-section" aria-labelledby="contact-title">
             <div class="container">
-                <h2>Get In Touch</h2>
-                <p>Have questions or feedback? We'd love to hear from you!</p>
-                <a href="mailto:AliAkbar@tutamail.com" class="contact-email">AliAkbar@tutamail.com</a>
+                <div class="section-header">
+                    <h2 id="contact-title" class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">Have questions, feedback, or want to collaborate? We'd love to hear from you.</p>
+                </div>
+                <div class="contact-content">
+                    <a href="mailto:AliAkbar@tutamail.com" class="contact-email">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        <span>AliAkbar@tutamail.com</span>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
-            <p>&copy; 2026 Grayonix Studios. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="logo-link" aria-label="Grayonix Studios Home">
+                        <svg class="logo-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                            <rect width="32" height="32" rx="8" fill="currentColor"/>
+                            <path d="M8 12h16M8 16h12M8 20h8" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                        <span class="logo-text">Grayonix Studios</span>
+                    </a>
+                    <p class="footer-tagline">Building AI-powered apps for growth.</p>
+                </div>
+                <nav class="footer-nav" aria-label="Footer navigation">
+                    <a href="#apps">Apps</a>
+                    <a href="#contact">Contact</a>
+                    <a href="docs/privacy-policy.html">Privacy</a>
+                    <a href="docs/terms-of-service.html">Terms</a>
+                </nav>
+                <p class="footer-copyright">&copy; 2026 Grayonix Studios. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 

@@ -7,29 +7,32 @@
     <title>GetTaller - AI-Powered Height Growth App</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/app-page.css">
 </head>
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="/" class="logo-link">
-                    <img src="../../assets/logo.svg" alt="Grayonix Studios Logo" class="logo-img">
+                <a href="/" class="logo-link" aria-label="Grayonix Studios Home">
+                    <svg class="logo-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                        <rect width="32" height="32" rx="8" fill="currentColor"/>
+                        <path d="M8 12h16M8 16h12M8 20h8" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                    </svg>
                     <span class="logo-text">Grayonix Studios</span>
                 </a>
             </div>
-            <button class="hamburger-menu" id="hamburger-menu" aria-label="Toggle navigation menu">
-                <span></span>
-                <span></span>
-                <span></span>
+            <button class="hamburger-menu" id="hamburger-menu" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
             </button>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="/" class="nav-link">Home</a></li>
-                <li><a href="/#apps" class="nav-link">Apps</a></li>
-                <li><a href="/#contact" class="nav-link">Contact</a></li>
+            <ul class="nav-menu" id="nav-menu" role="menubar">
+                <li role="none"><a href="/" class="nav-link">Home</a></li>
+                <li role="none"><a href="/#apps" class="nav-link">Apps</a></li>
+                <li role="none"><a href="/#contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -37,86 +40,157 @@
     <main>
         <!-- Back Link -->
         <div class="container back-link-container">
-            <a href="/" class="back-link">← Back to Apps</a>
+            <a href="/" class="back-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                <span>Back to Apps</span>
+            </a>
         </div>
 
         <!-- App Header Section -->
-        <section class="app-header-section">
+        <section class="app-header-section" aria-labelledby="app-title">
             <div class="container">
-                <img src="../../assets/gettaller-icon.png" alt="GetTaller App Icon" class="app-header-icon">
-                <h1 class="app-title">GetTaller</h1>
-                <p class="app-tagline">Unlock Your Height Potential</p>
-                <p class="app-description">GetTaller is an AI-powered mobile app designed to help you maximize your height through scientifically-guided training, personalized nutrition plans, and comprehensive progress tracking. Join thousands of users already on their growth journey.</p>
+                <div class="app-header-content">
+                    <img src="../../assets/gettaller-icon.png" alt="" class="app-header-icon" loading="lazy">
+                    <h1 id="app-title" class="app-title">GetTaller</h1>
+                    <p class="app-tagline">Unlock Your Height Potential</p>
+                    <p class="app-description">GetTaller is an AI-powered mobile app designed to help you maximize your height through scientifically-guided training, personalized nutrition plans, and comprehensive progress tracking. Join thousands of users already on their growth journey.</p>
+                    <div class="app-badges">
+                        <span class="badge badge-android">Android</span>
+                        <span class="badge badge-offline">Offline First</span>
+                        <span class="badge badge-free">Free</span>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Features Section -->
-        <section class="features-section">
+        <section class="features-section" aria-labelledby="features-title">
             <div class="container">
-                <h2>Key Features</h2>
+                <header class="section-header">
+                    <h2 id="features-title" class="section-title">Key Features</h2>
+                    <p class="section-subtitle">A complete system for height growth — training, nutrition, sleep, and tracking in one app.</p>
+                </header>
                 <div class="features-grid">
-                    <div class="feature-card">
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7"/></svg>
+                        </div>
                         <h3>Structured 90-Day Plan</h3>
                         <p>Follow a comprehensive, scientifically-designed 90-day program tailored to optimize your height growth potential with daily guidance and milestones.</p>
-                    </div>
-                    <div class="feature-card">
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                        </div>
                         <h3>AI-Powered Coaching</h3>
                         <p>Get personalized coaching powered by artificial intelligence that adapts to your progress, fitness level, and individual growth trajectory.</p>
-                    </div>
-                    <div class="feature-card">
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </div>
                         <h3>Guided Exercises</h3>
                         <p>Access a library of targeted exercises specifically designed to improve posture, stretch the spine, and support healthy height development.</p>
-                    </div>
-                    <div class="feature-card">
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+                        </div>
                         <h3>Progress Tracking</h3>
                         <p>Monitor your height gains with precision measurements, visual charts, and detailed analytics to stay motivated throughout your journey.</p>
-                    </div>
-                    <div class="feature-card">
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h4Z"/><path d="M17 2v20"/></svg>
+                        </div>
                         <h3>Nutrition Analysis</h3>
                         <p>Receive AI-powered recommendations for nutrition plans that support height growth with macro-balanced meals optimized for your goals.</p>
-                    </div>
-                    <div class="feature-card">
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 0-10 10c0 4.99 5.5 7.19 10 11.5 4.5-4.31 10-6.51 10-11.5a10 10 0 0 0-10-10Z"/><path d="M12 6v6l4 2"/></svg>
+                        </div>
                         <h3>Sleep Optimization</h3>
                         <p>Learn the importance of quality sleep for growth and get personalized sleep tracking and optimization tips integrated into your daily plan.</p>
-                    </div>
+                    </article>
                 </div>
             </div>
         </section>
 
         <!-- Screenshots Section -->
-        <section class="screenshots-section">
+        <section class="screenshots-section" aria-labelledby="screenshots-title">
             <div class="container">
-                <h2>App Screenshots</h2>
+                <header class="section-header">
+                    <h2 id="screenshots-title" class="section-title">App Screenshots</h2>
+                    <p class="section-subtitle">Track, train, and grow — all in one focused interface.</p>
+                </header>
                 <div class="screenshots-grid">
-                    <img src="../../assets/screenshots/1.png" alt="GetTaller Dashboard - Overview of your height progress and daily plan" class="screenshot">
-                    <img src="../../assets/screenshots/2.png" alt="GetTaller Training - Guided exercise interface with video demonstrations" class="screenshot">
-                    <img src="../../assets/screenshots/3.png" alt="GetTaller Nutrition - Personalized meal plans and nutrition tracking" class="screenshot">
-                    <img src="../../assets/screenshots/4.png" alt="GetTaller Dashboard - Overview of your height progress and daily plan" class="screenshot">
-                    <img src="../../assets/screenshots/5.png" alt="GetTaller Training - Guided exercise interface with video demonstrations" class="screenshot">
-                    <img src="../../assets/screenshots/6.png" alt="GetTaller Nutrition - Personalized meal plans and nutrition tracking" class="screenshot">
+                    <figure class="screenshot-card">
+                        <img src="../../assets/screenshots/1.png" alt="GetTaller Dashboard - Overview of your height progress and daily plan" class="screenshot" loading="lazy">
+                        <figcaption class="screenshot-caption">Dashboard</figcaption>
+                    </figure>
+                    <figure class="screenshot-card">
+                        <img src="../../assets/screenshots/2.png" alt="GetTaller Training - Guided exercise interface with video demonstrations" class="screenshot" loading="lazy">
+                        <figcaption class="screenshot-caption">Training</figcaption>
+                    </figure>
+                    <figure class="screenshot-card">
+                        <img src="../../assets/screenshots/3.png" alt="GetTaller Nutrition - Personalized meal plans and nutrition tracking" class="screenshot" loading="lazy">
+                        <figcaption class="screenshot-caption">Nutrition</figcaption>
+                    </figure>
+                    <figure class="screenshot-card">
+                        <img src="../../assets/screenshots/4.png" alt="GetTaller Progress - Height tracking charts and analytics" class="screenshot" loading="lazy">
+                        <figcaption class="screenshot-caption">Progress</figcaption>
+                    </figure>
+                    <figure class="screenshot-card">
+                        <img src="../../assets/screenshots/5.png" alt="GetTaller Exercises - Guided stretching and posture routines" class="screenshot" loading="lazy">
+                        <figcaption class="screenshot-caption">Exercises</figcaption>
+                    </figure>
+                    <figure class="screenshot-card">
+                        <img src="../../assets/screenshots/6.png" alt="GetTaller Sleep - Sleep tracking and optimization tips" class="screenshot" loading="lazy">
+                        <figcaption class="screenshot-caption">Sleep</figcaption>
+                    </figure>
                 </div>
             </div>
         </section>
 
         <!-- Download Section -->
-        <section class="download-section">
+        <section class="download-section" aria-labelledby="download-title">
             <div class="container">
-                <h2>Get Started Today</h2>
-                <p>Download GetTaller from the Google Play Store and begin your height growth journey.</p>
-                <a href="https://play.google.com/store/apps/details?id=com.grayonix.GetTaller" class="cta-button cta-primary" target="_blank" rel="noopener noreferrer">Download on Google Play</a>
+                <div class="download-content">
+                    <h2 id="download-title">Get Started Today</h2>
+                    <p>Download GetTaller from the Google Play Store and begin your height growth journey. Free, science-backed, AI-guided.</p>
+                    <div class="download-links">
+                        <a href="https://play.google.com/store/apps/details?id=com.grayonix.GetTaller" class="cta-button cta-primary" target="_blank" rel="noopener noreferrer">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h-2v8h2v-8zm0 10h-2v2h2v-2z"/></svg>
+                            <span>Download on Google Play</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2026 Grayonix Studios. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="../../docs/privacy-policy.html">Privacy Policy</a>
-                    <a href="../../docs/terms-of-service.html">Terms of Service</a>
+                <div class="footer-brand">
+                    <a href="/" class="logo-link" aria-label="Grayonix Studios Home">
+                        <svg class="logo-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                            <rect width="32" height="32" rx="8" fill="currentColor"/>
+                            <path d="M8 12h16M8 16h12M8 20h8" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                        <span class="logo-text">Grayonix Studios</span>
+                    </a>
+                    <p class="footer-tagline">Building AI-powered apps for growth.</p>
                 </div>
+                <nav class="footer-nav" aria-label="Footer navigation">
+                    <a href="/#apps">Apps</a>
+                    <a href="/#contact">Contact</a>
+                    <a href="../../docs/privacy-policy.html">Privacy</a>
+                    <a href="../../docs/terms-of-service.html">Terms</a>
+                </nav>
+                <p class="footer-copyright">&copy; 2026 Grayonix Studios. All rights reserved.</p>
             </div>
         </div>
     </footer>

@@ -1,66 +1,62 @@
 // Grayonix Studios - Main JavaScript
-// Navigation interactivity and smooth scrolling
+// Navigation, hamburger, active section highlighting
 
-document.addEventListener('DOMContentLoaded', function() {
-  // Get DOM elements
+document.addEventListener('DOMContentLoaded', function () {
   const hamburgerMenu = document.querySelector('#hamburger-menu');
   const navMenu = document.querySelector('#nav-menu');
   const navLinks = document.querySelectorAll('.nav-link');
 
-  // Hamburger menu toggle
-  hamburgerMenu.addEventListener('click', function() {
+  if (!hamburgerMenu || !navMenu) return;
+
+  // Hamburger menu toggle with ARIA
+  hamburgerMenu.addEventListener('click', function () {
+    const isExpanded = hamburgerMenu.getAttribute('aria-expanded') === 'true';
+    hamburgerMenu.setAttribute('aria-expanded', !isExpanded);
     hamburgerMenu.classList.toggle('active');
     navMenu.classList.toggle('active');
   });
 
-  // Handle nav link clicks: close menu and smooth scroll
-  navLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      // Get the target section id from href
+  // Nav link clicks: close menu, smooth scroll to #anchor
+  navLinks.forEach((link) => {
+    link.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
 
-      // Close the menu
+      // Close mobile menu
+      hamburgerMenu.setAttribute('aria-expanded', 'false');
       hamburgerMenu.classList.remove('active');
       navMenu.classList.remove('active');
 
-      // Smooth scroll to target section
-      if (targetId.startsWith('#')) {
+      // Smooth scroll for same-page anchors
+      if (targetId?.startsWith('#')) {
         e.preventDefault();
         const targetSection = document.querySelector(targetId);
         if (targetSection) {
-          targetSection.scrollIntoView({ behavior: 'smooth' });
+          targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       }
     });
   });
 
-  // Track scroll position and highlight active section
-  window.addEventListener('scroll', function() {
-    let currentSection = '';
+  // Scroll spy: highlight active nav link
+  const sections = document.querySelectorAll('main section[id]');
+  if (sections.length) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach((link) => {
+              link.classList.remove('active');
+              if (link.getAttribute('href') === `#${id}`) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+      },
+      { rootMargin: '-50% 0px -50% 0px', threshold: 0 }
+    );
 
-    // Check which section is in view (with offset for sticky navbar)
-    const sections = document.querySelectorAll('main section[id]');
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-
-      // If section is visible on screen (top portion)
-      if (window.pageYOffset >= sectionTop - 150) {
-        currentSection = section.getAttribute('id');
-      }
-    });
-
-    // Remove active class from all links
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-    });
-
-    // Add active class to current section's link
-    if (currentSection) {
-      const activeLink = document.querySelector(`.nav-link[href="#${currentSection}"]`);
-      if (activeLink) {
-        activeLink.classList.add('active');
-      }
-    }
-  });
+    sections.forEach((s) => observer.observe(s));
+  }
 });
